@@ -5,7 +5,7 @@ const Color = "RANDOM";
 module.exports = {
     name: 'addemoji',
     aliases: ['ae'], 
-    categories: 'other', 
+    categories: 'mod', 
     userperm: ['MANAGE_EMOJIS_AND_STICKERS'],
     botperm: ['MANAGE_EMOJIS_AND_STICKERS'],
     ownerOnly: false,

@@ -28,9 +28,10 @@ module.exports = {
 
       const emo = {
         info: "❓",
-        other : "🔰",
+        other : "🔎",
         mod : "⚠",
-        games : "🎮"
+        games : "🎮",
+        fun: "🎲"
 
       };
 
@@ -50,7 +51,7 @@ module.exports = {
     
       const embed = new MessageEmbed()
         .setTitle(`\`\`\`🔰 Help Menu \`\`\``)
-        .setDescription(`\`❗ My Prefix is : ${prefix} \`\n\`❗ Parameter: {} Required || [] optional \` \n To check out a category, use command ${prefix}help [category] For more information go to the next page by reacting! \n\n [🔴 Invite Me Now](https://discord.com/api/oauth2/authorize?client_id=927193694937952276&permissions=8&scope=applications.commands%20bot)`)
+        .setDescription(`\`❗ My Prefix is : ${prefix} \`\n\`❗ Parameter: {} Required || [] optional \` \n> To check out a category, use command ${prefix}help [category] Or use /help for all the command list! \n`)
         .addFields(categories)
         .setFooter(
           `AftervareBOT`,
@@ -58,13 +59,13 @@ module.exports = {
             dynamic: true,
           })
         )
-        
+        .setTimestamp()
         .setThumbnail(
           client.user.displayAvatarURL({
             dynamic: true,
           })
         )
-        .setColor(color);
+        .setColor('GREEN');
 
       return message.channel.send({ embeds: [embed] });
     } else {

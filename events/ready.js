@@ -4,8 +4,7 @@ const chalk = require("chalk");
 const { mongoUrl } = require("../config/config.json"); 
 
 client.on("ready", () => {
-   
-  
+
 /// connecting mongo db
     mongoose
     .connect(mongoUrl, {
