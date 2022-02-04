@@ -39,7 +39,7 @@ client.on("messageCreate", async (message) => {
   if (!command) return;
   if (command) {
     let userperm = new MessageEmbed().setDescription(
-      `*<a:wrong:885815677091454986> You Need **${command.userperm}** Permission*`
+      `*<a:No_1:939189505804607509> You Need **${command.userperm}** Permission*`
     );
 
     if (!command) return
@@ -55,12 +55,13 @@ client.on("messageCreate", async (message) => {
     //Check if user is on cooldown with the cmd
     if (onCoolDown(message, command)) {
       let cool = new MessageEmbed()
-      .setDescription(`*<a:wrong:885815677091454986> Please wait **${onCoolDown(message, command)}** Second(s) before reusing this ${command.name} command!*`)
-      return message.channel.send({embeds : [cool]})
+      .setDescription(`*<a:No_1:939189505804607509> Please wait **${onCoolDown(message, command)}** Second(s) before reusing this ${command.name} command!*`)
+      const del = await message.channel.send({embeds : [cool]})
+      client.sleep(3000).then(() => del.delete());
     }
 
     let botperm = new MessageEmbed().setDescription(
-      `*<a:wrong:885815677091454986> I Need **${command.botperm}** Permission*`
+      `*<a:No_1:939189505804607509> I Need **${command.botperm}** Permission*`
     );
     if (!message.guild.me.permissions.has(command.botperm || []))
     return message.channel.send({ embeds: [botperm] });
@@ -71,7 +72,7 @@ client.on("messageCreate", async (message) => {
     if (command.ownerOnly) {
     if (!owners.includes(message.author.id)) {
     let ownerOnly = new MessageEmbed()
-      .setDescription( "*<a:wrong:885815677091454986> Only Bot Developer can use this command!*" )
+      .setDescription( "*<a:No_1:939189505804607509> Only Bot Developer can use this command!*" )
     return message.channel.send({ embeds: [ownerOnly]})
     }}
   }

@@ -1,4 +1,5 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
+const ms = require('ms');
 module.exports = {
     name: 'clear',
     aliases: ['purge'], 
@@ -32,7 +33,9 @@ module.exports = {
               message.channel.send(`✅  Cleared **${m.size}**/**${amount}** messages!`, {
                 timeout: 4000,
                 message
-              });
+              }).then((msg) => {
+                setTimeout(() => msg.delete(), ms('5 seconds'))
+            });
             });
           } else if (Math.floor(amount / 100) % 100) {
             setTimeout(() => {
@@ -44,21 +47,27 @@ module.exports = {
               message.channel.send(`✅  Cleared **${amount}**/**${amount}** messages!`, {
                 timeout: 4000,
                 message
-              });
+              }).then((msg) => {
+                setTimeout(() => msg.delete(), ms('5 seconds'))
+            });
             }, 3000);
           } else if (amount % 100 === 0) {
             message.channel.bulkDelete(amount, true).then(m => {
               message.channel.send(`✅  Cleared **${m.size}**/**${amount}** messages!`, {
                 timeout: 4000,
                 message
-              });
+              }).then((msg) => {
+                setTimeout(() => msg.delete(), ms('5 seconds'))
+            });
             });
           } else {
             let s = await message.channel.bulkDelete(amount % 100, true);
             message.channel.send(`✅  Cleared **${s.size}**/**${amount}** messages!`, {
               timeout: 4000,
               message
-            });
+            }).then((msg) => {
+              setTimeout(() => msg.delete(), ms('5 seconds'))
+          });
           }
         }
    }

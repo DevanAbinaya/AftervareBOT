@@ -23,6 +23,11 @@ module.exports = {
     const q = queue.songs
       .map((song, i) => `${i === 0 ? 'Playing:' : `${i}.`} ${song.name} - \`${song.formattedDuration}\``)
       .join('\n')
-    message.channel.send(`${client.emotes.queue} | **Server Queue**\n${q}`)
+    
+    const Embed = new MessageEmbed()
+      .setTitle(`${client.emotes.queue} | **Server Queue**`)
+      .setDescription(q)
+
+    message.channel.send({ embeds: [Embed] })
   }
 }

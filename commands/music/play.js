@@ -1,4 +1,6 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
+const { sleep } = require('../..');
+const ms = require('ms');
 
 module.exports = {
   name: 'play',
@@ -20,7 +22,9 @@ module.exports = {
   run: async (client, message, args) => {
     message.delete();
     const string = args.join(' ')
-    if (!string) return message.channel.send(`${client.emotes.error} | Please enter a song url or query to search.`)
+    if (!string) return message.channel.send(`${client.emotes.error} | Please enter a song url or query to search.`).then((msg) => {
+      setTimeout(() => msg.delete(), ms('5 seconds'))
+  });
     client.distube.play(message.member.voice.channel, string, {
       member: message.member,
       textChannel: message.channel,
