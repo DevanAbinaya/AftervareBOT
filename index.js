@@ -1,6 +1,8 @@
 const { Discord, Client, Message, MessageEmbed, Collection } = require("discord.js");
 const colors = require("colors");
 const { DisTube } = require('distube');
+require('dotenv').config();
+var token = process.env.token;
 
 const fs = require("fs");
 const client = new Client({
@@ -23,7 +25,8 @@ const config = require("./config/config.json");
 
 const ee = require("./config/embed.json");
 const prefix = config.prefix;
-const token = require("./config.json").token;
+
+// Distube
 const { SpotifyPlugin } = require('@distube/spotify');
 const { SoundCloudPlugin } = require('@distube/soundcloud');
 
