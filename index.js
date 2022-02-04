@@ -23,7 +23,7 @@ const config = require("./config/config.json");
 
 const ee = require("./config/embed.json");
 const prefix = config.prefix;
-const token = config.token;
+const token = require("./config.json").token;
 const { SpotifyPlugin } = require('@distube/spotify');
 const { SoundCloudPlugin } = require('@distube/soundcloud');
 
