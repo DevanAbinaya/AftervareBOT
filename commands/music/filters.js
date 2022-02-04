@@ -1,5 +1,5 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
-const ms = reuire('ms')
+const ms = require('ms');
 module.exports = {
   name: 'filter',
   aliases: ['filters'],
