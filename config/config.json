@@ -4,7 +4,16 @@
     "mongoUrl": "mongodb+srv://aftervare:aftervare9288@discord-bot.cpd7j.mongodb.net/AftervareBOT",
     "owners": [
         "338295424479789057",
-       "427603762543067137"]
+       "427603762543067137"
+    ],
+    "emoji": {
+        "play": "▶️",
+        "stop": "⏹️",
+        "queue": "📄",
+        "success": "☑️",
+        "repeat": "🔁",
+        "error": "❌"
+      }
 
 
 }

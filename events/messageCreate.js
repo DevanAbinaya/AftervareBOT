@@ -42,6 +42,11 @@ client.on("messageCreate", async (message) => {
       `*<a:wrong:885815677091454986> You Need **${command.userperm}** Permission*`
     );
 
+    if (!command) return
+    if (command.inVoiceChannel && !message.member.voice.channel) {
+      return message.channel.send(`${client.emotes.error} | You must be in a voice channel!`)
+    }
+
     if (!message.member.permissions.has(command.userperm || []))
       return message.channel.send({ embeds: [userperm] });
 
@@ -62,20 +67,18 @@ client.on("messageCreate", async (message) => {
 
     /// owner only command handler
     const { owners } = require("../config/config.json");
-if (command) {
- if (command.ownerOnly) {
-if (!owners.includes(message.author.id)) {
-let ownerOnly = new MessageEmbed()
- .setDescription( "*<a:wrong:885815677091454986> Only Bot Developer can use this command!*" )
-return message.channel.send({ embeds: [ownerOnly]})
-}}
-}
+    if (command) {
+    if (command.ownerOnly) {
+    if (!owners.includes(message.author.id)) {
+    let ownerOnly = new MessageEmbed()
+      .setDescription( "*<a:wrong:885815677091454986> Only Bot Developer can use this command!*" )
+    return message.channel.send({ embeds: [ownerOnly]})
+    }}
+  }
 
  if (command) command.run(client, message, args, prefix);
 
-
-
-  }
-
+}
+  
   // new start from here
 });
