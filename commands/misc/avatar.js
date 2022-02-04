@@ -5,7 +5,7 @@ var config = require('../../config/config.json');
 module.exports = {
   name: "avatar",
   aliases: ["av"],
-  categories: "other",
+  categories: "misc",
   userperm: [],
   botperm: [],
   description: "Show Your Avatar",

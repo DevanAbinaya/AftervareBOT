@@ -22,7 +22,7 @@ module.exports = {
             message
           });
         } else if (!amount || amount < 2) {
-          return message.chanel.send("Please enter a number of message between 2", {
+          return message.channel.send("Please enter a number of message between 2", {
             message
           });
         }

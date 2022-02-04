@@ -27,7 +27,7 @@ module.exports = {
           const { body } = await superagent
             .get("https://api.waifu.pics/sfw/bonk");
                 const embed = new MessageEmbed()
-            .setColor(client.config.Color)
+            .setColor('BLUE')
             .setDescription(`${member} Get bonked by ${interaction.user.tag}`)
             .setImage(body.url)
             .setTimestamp()

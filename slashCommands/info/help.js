@@ -23,13 +23,13 @@ module.exports = {
     if (!args[0]) {
       let categories = [];
 
-      readdirSync("./commands/").forEach((dir) => {
-        const commands = readdirSync(`./commands/${dir}/`).filter((file) =>
+      readdirSync("./slashCommands").forEach((dir) => {
+        const commands = readdirSync(`./slashCommands/${dir}/`).filter((file) =>
           file.endsWith(".js")
         );
 
         const cmds = commands.map((command) => {
-          let file = require(`../../commands/${dir}/${command}`);
+          let file = require(`../../slashCommands/${dir}/${command}`);
 
           if (!file.name) return "No command name.";
 
@@ -49,14 +49,14 @@ module.exports = {
       });
 
       const embed = new MessageEmbed()
-        .setTitle("📬 Need help? Here are all of my commands:")
+        .setTitle("📬 Need help? Here are all of my Slash commands:")
         .addFields(categories)
         .setDescription(
           `Use \`${prefix}help\` followed by a command name to get more additional information on a command. For example: \`${prefix}help invite\`.`
         )
-        .setFooter(
+        .setFooter({ text:
           `Requested by ${interaction.user.tag}`,
-        )
+        })
         .setTimestamp()
         .setColor(roleColor);
       return interaction.followUp({ embeds: [embed] });
@@ -65,7 +65,7 @@ module.exports = {
         client.commands.get(args[0].toLowerCase()) ||
         client.commands.find(
           (c) => c.aliases && c.aliases.includes(args[0].toLowerCase())
-        );
+          );
 
       if (!command) {
         const embed = new MessageEmbed()
@@ -101,9 +101,9 @@ module.exports = {
             ? command.description
             : "No description for this command."
         )
-        .setFooter(
+        .setFooter({ text:
             `Requested by ${interaction.user.tag}`,
-          )
+        })
         .setTimestamp()
         .setColor(roleColor);
       return interaction.followUp({ embeds: [embed] });

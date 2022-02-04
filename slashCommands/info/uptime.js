@@ -28,6 +28,5 @@ module.exports = {
      
       return interaction.followUp({ ephemeral: true, embeds: [up], allowedMentions: { repliedUser: false } });
 
-    
   }
 };

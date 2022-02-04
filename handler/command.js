@@ -66,10 +66,10 @@ slashCommands.map((value) => {
 });
 client.on("ready", async () => {
   // reset slash
-  client.application.commands.set([]);
-  //  client.guilds.cache.forEach(async (g) => {
-  //    await client.guilds.cache.get(g.id).commands.set(arrayOfSlashCommands);
-  //  }); 
+  // client.application.commands.set([]);
+  client.guilds.cache.forEach(async (g) => {
+    await client.guilds.cache.get(g.id).commands.set(arrayOfSlashCommands);
+  }); 
 });
 
 }; 
