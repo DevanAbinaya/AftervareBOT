@@ -54,24 +54,28 @@ module.exports = async (client) => {
   });
   ////
  
-  // starting the slashcommands
-  const slashCommands = await globPromise(
-    `${process.cwd()}/SlashCommands/*/*.js`
+// Slash Commands
+const slashCommands = await globPromise(
+  `${process.cwd()}/SlashCommands/*/*.js`
 );
 
 const arrayOfSlashCommands = [];
 slashCommands.map((value) => {
-    const file = require(value);
-    if (!file?.name) return;
-    client.slashCommands.set(file.name, file);
-    arrayOfSlashCommands.push(file);
+  const file = require(value);
+  if (!file?.name) return;
+  client.slashCommands.set(file.name, file);
+  arrayOfSlashCommands.push(file);
 });
 client.on("ready", async () => {
-  // global
-  /// await client.application.commands.set(arrayOfSlashCommands)
-  client.guilds.cache.forEach(async (g) => {
-    await client.guilds.cache.get(g.id).commands.set(arrayOfSlashCommands);
-  }); 
+  await client.application.commands.set(arrayOfSlashCommands)
 });
 
-}; 
+///  client.on("ready", async () => {
+///  // global
+///  /// await client.application.commands.set(arrayOfSlashCommands)
+///  client.guilds.cache.forEach(async (g) => {
+///    await client.guilds.cache.get(g.id).commands.set(arrayOfSlashCommands);
+///  }); 
+/// });
+
+};
