@@ -66,10 +66,10 @@ slashCommands.map((value) => {
 });
 client.on("ready", async () => {
   // global
-  await client.application.commands.set(arrayOfSlashCommands)
-  ///client.guilds.cache.forEach(async (g) => {
-  ///  await client.guilds.cache.get(g.id).commands.set(arrayOfSlashCommands);
-  ///}); 
+  /// await client.application.commands.set(arrayOfSlashCommands)
+  client.guilds.cache.forEach(async (g) => {
+    await client.guilds.cache.get(g.id).commands.set(arrayOfSlashCommands);
+  }); 
 });
 
 }; 
