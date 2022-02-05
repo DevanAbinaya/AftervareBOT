@@ -6,6 +6,8 @@ const { readdirSync } = require("fs");
 const ascii = require("ascii-table");
 let table = new ascii("Commands");
 table.setHeading("Command", "Load status");
+require('dotenv').config();
+var token = process.env.token;
 
 /**
  * @param {Client} client

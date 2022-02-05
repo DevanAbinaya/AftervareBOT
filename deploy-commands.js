@@ -9,6 +9,7 @@ const commandFiles = fs.readdirSync('./slashCommands').filter(file => file.endsW
 
 // Place your client and guild ids here
 const clientId = '927193694937952276';
+const guildId = '822413263148285973';
 
 for (const file of commandFiles) {
 	const command = require(`./slashCommands/${file}`);
@@ -22,7 +23,7 @@ const rest = new REST({ version: '9' }).setToken(token);
 		console.log('Started refreshing application (/) commands.');
 
 		await rest.put(
-			Routes.applicationCommands(clientId),
+			Routes.applicationGuildCommands(clientId, guildId),
 			{ body: commands },
 		);
 
