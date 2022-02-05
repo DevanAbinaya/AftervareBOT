@@ -3,7 +3,8 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
 	name: 'meme',
-	category: 'extra',
+	categories: 'fun',
+    description: 'Showing meme',
 	run: async (client, message, args) => {
 		const url = 'https://no-api-key.com/api/v1/memes';
 
