@@ -6,8 +6,6 @@ const { readdirSync } = require("fs");
 const ascii = require("ascii-table");
 let table = new ascii("Commands");
 table.setHeading("Command", "Load status");
-require('dotenv').config();
-var token = process.env.token;
 
 /**
  * @param {Client} client
@@ -56,7 +54,7 @@ module.exports = async (client) => {
  
 // Slash Commands
 const slashCommands = await globPromise(
-  `${process.cwd()}/SlashCommands/*/*.js`
+  `${process.cwd()}/slashCommands/*/*.js`
 );
 
 const arrayOfSlashCommands = [];
