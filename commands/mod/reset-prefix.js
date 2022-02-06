@@ -4,7 +4,7 @@ const prefixSchema = require('../../models/prefix');
 
 module.exports = {
     name: 'resetprefix',
-    aliases: ['pr', 'prefixreset'], 
+    aliases: ['pr', 'prefixreset', 'rp'], 
     categories: 'mod', 
     userperm: ['MANAGE_GUILD'],
     botperm: ['MANAGE_GUILD'],
