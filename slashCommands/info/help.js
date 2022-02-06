@@ -1,6 +1,23 @@
 const { Client, ContextMenuInteraction, MessageEmbed } = require("discord.js");
 const { readdirSync } = require("fs");
-const prefix = require("../../config/config.json").prefix;
+const client = require("../../index");
+
+// Prefix
+const prefixSchema = require('../../models/prefix');
+const prefix = require('../../config/config.json').prefix;
+client.prefix = async function(message) {
+  let custom;
+
+  const data = await prefixSchema.findOne({ Guild : message.guild.id })
+      .catch(err => console.log(err))
+  
+  if(data) {
+      custom = data.Prefix;
+  } else {
+      custom = prefix;
+  }
+  return custom;
+};
 
 module.exports = {
     name: "help",
@@ -22,6 +39,8 @@ module.exports = {
 
     if (!args[0]) {
       let categories = [];
+
+      const p = await client.prefix(interaction)
 
       readdirSync("./slashCommands").forEach((dir) => {
         const commands = readdirSync(`./slashCommands/${dir}/`).filter((file) =>
@@ -52,7 +71,7 @@ module.exports = {
         .setTitle("📬 Need help? Here are all of my Slash commands:")
         .addFields(categories)
         .setDescription(
-          `Use \`${prefix}help\` followed by a command name to get more additional information on a command. For example: \`${prefix}help invite\`.`
+          `Use \`${p}help\` followed by a command name to get more additional information on a command. For example: \`${p}help invite\`.`
         )
         .setFooter({ text:
           `Requested by ${interaction.user.tag}`,
@@ -61,6 +80,7 @@ module.exports = {
         .setColor(roleColor);
       return interaction.followUp({ embeds: [embed] });
     } else {
+      const p = await client.prefix(interaction)
       const command =
         client.commands.get(args[0].toLowerCase()) ||
         client.commands.find(
@@ -70,7 +90,7 @@ module.exports = {
       if (!command) {
         const embed = new MessageEmbed()
           .setTitle(
-            `Invalid command! Use \`${prefix}help\` for all of my commands!`
+            `Invalid command! Use \`${p}help\` for all of my commands!`
           )
           .setColor("FF0000");
         return interaction.followUp({ embeds: [embed] });
@@ -78,7 +98,7 @@ module.exports = {
 
       const embed = new MessageEmbed()
         .setTitle("Command Details:")
-        .addField("PREFIX:", `\`${prefix}\``)
+        .addField("PREFIX:", `\`${p}\``)
         .addField(
           "COMMAND:",
           command.name ? `\`${command.name}\`` : "No name for this command."
@@ -92,8 +112,8 @@ module.exports = {
         .addField(
           "USAGE:",
           command.usage
-            ? `\`${prefix}${command.name} ${command.usage}\``
-            : `\`${prefix}${command.name}\``
+            ? `\`${p}${command.name} ${command.usage}\``
+            : `\`${p}${command.name}\``
         )
         .addField(
           "DESCRIPTION:",

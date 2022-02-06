@@ -3,7 +3,23 @@ const {MessageEmbed} = require("discord.js")
 const client = require("../../index");
 const { readdirSync } = require("fs");
 let color = "#36393f";
-const prefix = require("../../config/config.json").prefix;
+
+// Prefix
+const prefixSchema = require('../../models/prefix');
+const prefix = require('../../config/config.json').prefix;
+client.prefix = async function(message) {
+  let custom;
+
+  const data = await prefixSchema.findOne({ Guild : message.guild.id })
+      .catch(err => console.log(err))
+  
+  if(data) {
+      custom = data.Prefix;
+  } else {
+      custom = prefix;
+  }
+  return custom;
+};
 
 module.exports = {
     name: "help",
@@ -20,6 +36,8 @@ module.exports = {
         let categories = [];
   
         let ignored = ["owner"];
+
+        const p = await client.prefix(message)
 
         const row = new MessageActionRow()
             .addComponents(
@@ -75,7 +93,7 @@ module.exports = {
   
           cats = {
             name: name,
-            value: `\`${prefix}help ${dir.toLowerCase()}\``,
+            value: `\`${p}help ${dir.toLowerCase()}\``,
             inline: true,
           };
   
@@ -84,18 +102,18 @@ module.exports = {
             
         let embed = new MessageEmbed()
             .setTitle("Help Menu!")
-            .setDescription(`**Pilih menu di bawah sesuai dengan kategorinya!**\n> Untuk melihat kategori, pakai command \`\`${prefix}help [category]\`\` atau \`\`/help\`\` untuk melihat slash command!`)
+            .setDescription(`**Pilih menu di bawah sesuai dengan kategorinya!**\n> Untuk melihat kategori, pakai command \`\`${p}help [category]\`\` atau \`\`/help\`\` untuk melihat slash command!`)
             .setColor("GREEN")
             .setThumbnail('https://cdn.discordapp.com/attachments/925993294331269130/933566850904772618/unknown.png')
             .addFields(
-                {name: "Prefixes!",value: `\`\`Prefix = [${prefix}]\`\`` , inline: true,},
+                {name: "Prefixes!",value: `\`\`Prefix = [${p}]\`\`` , inline: true,},
                 {name: "Invite Me!",value: `[Click Me](https://discord.com/api/oauth2/authorize?client_id=927193694937952276&permissions=8&scope=applications.commands%20bot)`, inline: true,},
                 {name: "ㅤ",value: `ㅤ`, inline: true,}
             )
             .addFields(
                 {name: '<:SlashCommand:939011353627226132> Slash Commands',value: "`/help`", inline: true},
-                {name: '❓ Info!', value: "`-help info`", inline: true},
-                {name: '🔎 Other', value: "`-list`", inline: true}
+                {name: '❓ Info!', value: `\`\`${p}help info\`\``, inline: true},
+                {name: '🔎 Other', value: `\`\`${p}list\`\``, inline: true}
             )
             .setTimestamp()
             .setFooter({ text: "If you can't find what you need, ask `Factiven#9110` for help." });
@@ -219,7 +237,8 @@ module.exports = {
         });
   
         // console.log(cots);
-  
+        const p = await client.prefix(message)
+
         const command =
           client.commands.get(args[0].toLowerCase()) ||
           client.commands.find(
@@ -234,7 +253,7 @@ module.exports = {
               } Commands!__`
             )
             .setDescription(
-              `Use \`${prefix}help\` followed by a command name to get more information on a command.\nFor example: \`${prefix}help ping\`.\n\n`
+              `Use \`${p}help\` followed by a command name to get more information on a command.\nFor example: \`${p}help ping\`.\n\n`
             )
             .addFields(catts)
             .setColor(color);
@@ -245,7 +264,7 @@ module.exports = {
         if (!command) {
           const embed = new MessageEmbed()
             .setTitle(
-              `❌ Invalid command! Please Use \`${prefix}help\` To see my all commands`
+              `❌ Invalid command! Please Use \`${p}help\` To see my all commands`
             )
             .setColor("RED");
           return message.channel.send({ embeds: [embed] });
@@ -266,8 +285,8 @@ module.exports = {
           .addField(
             "Usage:",
             command.usage
-              ? `\`${prefix}${command.name} ${command.usage}\``
-              : `\`${prefix}${command.name}\``
+              ? `\`${p}${command.name} ${command.usage}\``
+              : `\`${p}${command.name}\``
           )
           .addField(
             "Command Description:",

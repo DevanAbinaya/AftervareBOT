@@ -2,7 +2,6 @@ const { MessageEmbed, Collection } = require("discord.js");
 var config = require("../config/config.json");
 var ee = require("../config/config.json");
 const client = require("..");
-const prefix = config.prefix;
 const ms = require('ms');
 
 function sleep(milliseconds) {
@@ -17,14 +16,34 @@ function sleep(milliseconds) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
+// Custom Prefix
+const prefixSchema = require('../models/prefix');
+const prefix = require('../config/config.json').prefix
+
+client.prefix = async function(message) {
+  let custom;
+
+  const data = await prefixSchema.findOne({ Guild : message.guild.id })
+      .catch(err => console.log(err))
+  
+  if(data) {
+      custom = data.Prefix;
+  } else {
+      custom = prefix;
+  }
+  return custom;
+};
+
 client.on("messageCreate", async (message) => {
+  const prefix = await client.prefix(message)
+
   const { escapeRegex, onCoolDown } = require("../utils/function");
   if (!message.guild) return;
   if (message.author.bot) return;
   if (message.channel.partial) await message.channel.fetch();
   if (message.partial) await message.fetch();
   const prefixRegex = new RegExp(
-    `^(<@!?${client.user.id}>|${escapeRegex(config.prefix)})\\s*`
+    `^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`
   );
   if (!prefixRegex.test(message.content)) return;
   const [, matchedPrefix] = message.content.match(prefixRegex);
@@ -34,8 +53,8 @@ client.on("messageCreate", async (message) => {
   if (cmd.length === 0) {
     if (matchedPrefix.includes(client.user.id)) {
       const mention = new MessageEmbed()
-      .setDescription(`*To see all Commands* \ntype: \`${config.prefix}help\``)
-      .setFooter('AftervareBOTs')
+      .setDescription(`*To see all Commands* \ntype: \`${prefix}help\``)
+      .setFooter({text: "AftervareBOTs"})
       message.reply({
         embeds: [mention],
         allowedMentions: {

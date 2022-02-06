@@ -1,6 +1,23 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
 const { readdirSync } = require("fs");
-const prefix = require("../../config/config.json").prefix;
+const client = require("../../index");
+
+// Prefix
+const prefixSchema = require('../../models/prefix');
+const prefix = require('../../config/config.json').prefix;
+client.prefix = async function(message) {
+  let custom;
+
+  const data = await prefixSchema.findOne({ Guild : message.guild.id })
+      .catch(err => console.log(err))
+  
+  if(data) {
+      custom = data.Prefix;
+  } else {
+      custom = prefix;
+  }
+  return custom;
+};
 
 module.exports = {
     name: 'list',
@@ -20,6 +37,8 @@ module.exports = {
     run: async(client, message, args) => { 
         if (!args[0]) {
             let categories = [];
+
+            const p = await client.prefix(message)
       
             readdirSync("./commands").forEach((dir) => {
               const commands = readdirSync(`./commands/${dir}/`).filter((file) =>
@@ -50,7 +69,7 @@ module.exports = {
               .setTitle("📬 Need help? Here are all of my Normal commands:")
               .addFields(categories)
               .setDescription(
-                `Use \`${prefix}help\` followed by a command name to get more additional information on a command. For example: \`${prefix}help invite\`.`
+                `Use \`${p}help\` followed by a command name to get more additional information on a command. For example: \`${p}help invite\`.`
               )
               .setFooter({ text: "If you can't find what you need, ask `Factiven#9110` for help." })
               .setTimestamp()
