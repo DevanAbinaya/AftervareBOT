@@ -49,6 +49,7 @@ client.events = new Collection();
 client.cooldowns = new Collection();
 client.slashCommands = new Collection();
 client.categories = fs.readdirSync("./commands/");
+client.colors = require("./assets/colors.json");
 client.emotes = config.emoji;
 
 // Initializing the project
