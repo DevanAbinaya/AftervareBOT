@@ -112,9 +112,9 @@ module.exports = {
             .setDescription("Use the slash commands")
             .setColor("GREEN")
             .addFields(
-                {name: "Discord Activity (Not Available)",value: "`/youtube` = Buat nonton youtube bareng di Discord!\n`/spellcast` = Main sambung huruf juga bisa kok!\n`/doodlecrew` = Ayo tebak apa gambarnya?"},
+                {name: "Discord Activity",value: "`/activities` = Lakukan berbagai aktivitas bersama di Discord!"},
                 {name: "Utilities",value: "`/ping` = Returns websocket ping\n`/clean (Not Available)` = Remove the amount of message you want to delete\n`/bonk` = No horni\n`/triggered (Not Available)` = Pake ini kalo ke-triggered."},
-                {name: 'Music Commands (Not Available)',value: "`/play` = Play a song!\n`/skip` = Skip the current song\n`/pause` = Pause the current song\n`/resume` = Resume the current song\n`/queue` = Display the queue\n`/volume` = Change or check the volume of the current song\n`/lyrics` = Display lyrics for the current song or a specific song\n`/now-playing` = Shows information about the current song."}
+                {name: 'Music Commands *(Moved To Prefix Command)*',value: "`/play` = Play a song!\n`/skip` = Skip the current song\n`/pause` = Pause the current song\n`/resume` = Resume the current song\n`/queue` = Display the queue\n`/volume` = Change or check the volume of the current song\n`/lyrics` = Display lyrics for the current song or a specific song\n`/now-playing` = Shows information about the current song."}
             )
             .setTimestamp()
             .setFooter({ text: "If you can't find what you need, ask `Factiven#9110` for help." });
@@ -124,8 +124,8 @@ module.exports = {
             .setDescription("This commands need Prefix!")
             .setColor("GREEN")
             .addFields(
-                {name: "Future Moderation (Not Available)", value: "`-prefix` = Check the server prefix\n`-setprefix` = Set your custom prefix\n`-prefix-reset` = Reset the prefix to default"},
-                {name: "General", value: "`-help` = For Help!\n`-ping` = Returns websocket ping\n`-invite` = Get the bot invitation\n`-hen (Not Available)` = Unlock a secret channel (sst don't tell anyone about this command), this command only works in [this server](https://discord.gg/v5fjSdKwr2)"},
+                {name: "Future Moderation *(Not Available)*", value: "`-prefix` = Check the server prefix\n`-setprefix` = Set your custom prefix\n`-prefix-reset` = Reset the prefix to default"},
+                {name: "General", value: "`-help` = For Help!\n`-ping` = Returns websocket ping\n`-invite` = Get the bot invitation\n`-hen` = Unlock a secret channel (sst don't tell anyone about this command). *this command only works in [this server](https://discord.gg/v5fjSdKwr2)"},
                 {name: "Games", value: '`-gunfight` = Tag temanmu untuk bermain gunfight\n`-akinator` = Penebak handal'}
             )
             .setTimestamp()
@@ -134,7 +134,7 @@ module.exports = {
 
 
         let embed3 = new MessageEmbed()
-            .setTitle("[-] Only Commands (Not Available)")
+            .setTitle("*(Not Available)*")
             .setDescription("You need to use [-] in order to execute this command!")
             .setColor("GREEN")
             .addFields(

@@ -3,7 +3,19 @@ var config = require("../config/config.json");
 var ee = require("../config/config.json");
 const client = require("..");
 const prefix = config.prefix;
+const ms = require('ms');
 
+function sleep(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+      currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+  }
+  
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
 client.on("messageCreate", async (message) => {
   const { escapeRegex, onCoolDown } = require("../utils/function");
@@ -80,6 +92,27 @@ client.on("messageCreate", async (message) => {
  if (command) command.run(client, message, args, prefix);
 
 }
-  
-  // new start from here
-});
+
+}); // new start from here
+
+client.on("messageCreate", async(message) => {
+  if(message.content.toLowerCase() == "-hen") {
+    message.delete(1000);
+      message.member.roles.add('900662797698990080');
+        
+        const henEmbed = new MessageEmbed()
+          .setAuthor({name: 'AftervareBOT'})
+          .setDescription(`Good job you unlocked the <#934847781724635196> ( ͡° ͜ʖ ͡°)`)
+          .setColor('NOT_QUITE_BLACK')
+          .setFooter({text: "*This message will disappeared after 50 seconds"})
+
+        message.channel.send({ embeds: [henEmbed] }).then((msg) => {
+          setTimeout(() => msg.delete(), ms('50 seconds'))
+      })
+        sleep(3600000).then(() => { message.member.roles.remove('900662797698990080');
+        message.author.send(`<@${message.author.id}> Udah sejam nih, segitu dulu aja ya scientific researchnya :v`).then((msg) => {
+          setTimeout(() => msg.delete(), ms('50 seconds'))
+      });
+     });
+  }
+})
