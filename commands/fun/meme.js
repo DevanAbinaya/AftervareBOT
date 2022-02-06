@@ -6,7 +6,7 @@ module.exports = {
   name: "meme",
   description: "See Meme",
   categories: "fun",
-  aliases: ["mem"],
+  aliases: ["mem", "m"],
   userperm: ['SEND_MESSAGES'],
   botperm: [],
   ownerOnly: false,
