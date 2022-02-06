@@ -18,6 +18,7 @@ module.exports = {
 
         const syntaxError = new MessageEmbed()
             .setTitle('Please provide the Anime title')
+            .setDescription('> `-anime <title>`')
             .setFooter({text: "this embed will disappear after 10 seconds."})
             .setColor("RED")
             .setTimestamp()
