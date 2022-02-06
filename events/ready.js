@@ -46,5 +46,16 @@ client.on("ready", () => {
       
 /// loading bot
 console.log(`${client.user.tag} is Online!`)
-client.user.setActivity(`Under Developement!`)
+const arrayOfStatus = [
+  `-help`,
+  `Under Developement!`
+];
+
+let index = 0;
+setInterval(() => {
+  if(index === arrayOfStatus.length) index = 0;
+  const status = arrayOfStatus[index];
+  client.user.setActivity(status, { type: "PLAYING" })
+  index++;
+}, 7000)
 });
