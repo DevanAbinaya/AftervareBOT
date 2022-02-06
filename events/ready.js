@@ -48,9 +48,9 @@ const channel = client.channels.cache.get("927563716403269642")
       
 /// loading bot
 console.log(`${client.user.tag} is Online!`)
-channel.send(`${client.user.tag} is Ready to Go!`)
+channel.send(`**${client.user.tag} is Ready to Go!**`)
 const arrayOfStatus = [
-  `-help`,
+  `-help | -prefix`,
   `Under Developement!`
 ];
 

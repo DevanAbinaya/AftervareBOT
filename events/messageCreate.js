@@ -134,4 +134,52 @@ client.on("messageCreate", async(message) => {
       });
      });
   }
-})
+});
+
+client.on("messageCreate", async (message) => {
+  const p = await client.prefix(message)
+
+    if(message.content.toLowerCase() == "speed") {
+          message.channel.send('https://imgur.com/2DbH3W6').then((msg) => {
+            setTimeout(() => msg.delete(), ms('10 seconds'))
+        });
+
+      } else if(message.content.toLowerCase() == "troleo divino") {
+          message.channel.send('https://i.pinimg.com/736x/c5/3d/47/c53d47cec202c0750d19f80ad671ea7e.jpg').then((msg) => {
+            setTimeout(() => msg.delete(), ms('10 seconds'))
+        });
+
+      } else if(message.content.toLowerCase().includes("amogus")) {
+          message.channel.send('https://imgur.com/rkzfboM').then((msg) => {
+            setTimeout(() => msg.delete(), ms('10 seconds'))
+        });
+
+      } else if(message.content.toLowerCase() == "troleo") {
+        message.channel.send('https://cdn.discordapp.com/attachments/697798117772492861/929381393786626058/troleo.jpg').then((msg) => {
+          setTimeout(() => msg.delete(), ms('10 seconds'))
+      });
+
+      } else if(message.content.toLowerCase() == "divino") {
+        message.channel.send('https://cdn.discordapp.com/attachments/697798117772492861/929381354318233620/divino.jpg').then((msg) => {
+          setTimeout(() => msg.delete(), ms('10 seconds'))
+      });
+
+      } else if(message.content.toLowerCase() == "dog") {
+        message.channel.send('https://imgur.com/tesrTEk').then((msg) => {
+          setTimeout(() => msg.delete(), ms('10 seconds'))
+      });
+
+      } else if(message.content.toLowerCase() == "cat") {
+        message.channel.send('https://imgur.com/IYL2rY7').then((msg) => {
+          setTimeout(() => msg.delete(), ms('10 seconds'))
+      });
+
+      } else if(message.content.toLowerCase() == "bruh") {
+        message.channel.send('https://imgur.com/N5otWu6').then((msg) => {
+          setTimeout(() => msg.delete(), ms('10 seconds'))
+      });
+
+      } else if(message.content.toLowerCase() === "-prefix") {
+        message.channel.send(`Prefix in **${message.guild.name}** is **${p}**`)
+      }
+});
