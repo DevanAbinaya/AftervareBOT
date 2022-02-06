@@ -10,7 +10,7 @@ module.exports = {
   userperm: ['SEND_MESSAGES'],
   botperm: [],
   ownerOnly: false,
-  cooldown : 2,
+  cooldown : 1,
   /**
    *
    * @param {Client} client
@@ -27,7 +27,7 @@ module.exports = {
       .setURL(json.postLink)
       .setTitle(json.title)
       .setImage(json.url)
-      .setFooter(`👍 ${json.ups || 0} | Author ${json.author || " "}`)
+      .setFooter({text: `👍 ${json.ups || 0} | Author ${json.author || " "}`})
       .setTimestamp();
 
     return message.channel.send({ embeds: [Embed] });

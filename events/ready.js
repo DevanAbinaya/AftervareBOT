@@ -4,6 +4,8 @@ const chalk = require("chalk");
 const { mongoUrl } = require("../config/config.json"); 
 
 client.on("ready", () => {
+/// Channel log
+const channel = client.channels.cache.get("927563716403269642")
 
 /// connecting mongo db
     mongoose
@@ -46,6 +48,7 @@ client.on("ready", () => {
       
 /// loading bot
 console.log(`${client.user.tag} is Online!`)
+channel.send(`${client.user.tag} is Ready to Go!`)
 const arrayOfStatus = [
   `-help`,
   `Under Developement!`
