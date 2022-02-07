@@ -1,6 +1,8 @@
+const { Message, Client, MessageEmbed } = require("discord.js");
 const { get } = require("request-promise-native");
 const config = require("../../config/config.json");
 const colors = require("../../assets/colors.json");
+const client = require("../../index");
 // Prefix
 const prefixSchema = require('../../models/prefix');
 const prefix = require('../../config/config.json').prefix;
