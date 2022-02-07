@@ -20,9 +20,9 @@ module.exports = {
     
 
       let circles = {
-        green: "<a:Online_Ping:866085733534269440>",
-        yellow: "<a:yellowloading:865563744162283541>",
-        red: "<a:red:865563826123964416>"
+        green: '<a:Online_Ping:866085733534269440>',
+        yellow: '<a:yellowloading:865563744162283541>',
+        red: '<a:red:865563826123964416>'
     }
    
     const pingEmbed = new MessageEmbed()
