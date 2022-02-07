@@ -28,13 +28,7 @@ module.exports = {
 
   run: async (client, message, args) => {
     try {
-      const Prefix = await client.prefix(message)
-      const customPrefix = async (message) => {
-        const data = await Prefix.findOne({ guildId: message.guild.id });
-        if (data?.prefix) return data.prefix;
-        return config.prefix;
-      };
-      const prefix = await customPrefix(message);
+      const prefix = await client.prefix(message)
 
       const color = colors.aliceblue;
       const syntaxError = {
