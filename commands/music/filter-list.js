@@ -17,17 +17,7 @@ module.exports = {
     run: async(client, message, args) => { 
         const listEmbed = new MessageEmbed()
             .setTitle("Music Filter!")
-            .setDescription(`"bassboost": "Bassboost",
-            "vaporwave": "Vaporwave",
-            "nightcore": "Nightcore",
-            "phaser":  "Phaser",
-            "tremolo":  "Tremolo",
-            "reverse": "Reverse",
-            "karaoke": "Karaoke",
-            "flanger": "Flanger",
-            "gate": "Gate",
-            "haas": "Haas",
-            "mcompand": "Mcompand"`)
+            .setDescription(`"3d"\n"bassboost"\n"echo"\n"karaoke"\n"nightcore"\n"vaporwave"\n"flanger"\n"gate"\n"haas"\n"reverse"\n"surround"\nmcompand"\n"phaser"\n"tremolo"\n"earwax"`)
             .setColor("GREEN")
 
         message.channel.send({embeds: [listEmbed]})
