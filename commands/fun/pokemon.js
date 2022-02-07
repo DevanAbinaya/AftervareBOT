@@ -22,8 +22,9 @@ client.prefix = async function(message) {
 
 module.exports = {
   name: "pokemon",
-  aliases: ["search-pokemon"],
-  usages: "<prefix>pokemon <search>",
+  aliases: ["search-pokemon", 'poke'],
+  description: 'Search for Pokemon!',
+  usage: "<search>",
   required: true,
 
   run: async (client, message, args) => {
