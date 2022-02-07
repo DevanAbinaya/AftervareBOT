@@ -30,7 +30,7 @@ module.exports = {
         .setDescription(
             `${client.ws.ping <= 200 ? circles.green : client.ws.ping <= 400 ? circles.yellow : circles.red} ${client.ws.ping}ms`
         )
-        message.reply({embeds : [pingEmbed],
+        message.channel.send({embeds : [pingEmbed],
         allowedMentions: {
             repliedUser: false
         } })
