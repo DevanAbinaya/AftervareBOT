@@ -1,5 +1,5 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
-const akinator = require("discord.js-akinator");
+const akinator = require("../../assets/discord.js-akinator");
 
 module.exports = {
     name: 'akinator',
