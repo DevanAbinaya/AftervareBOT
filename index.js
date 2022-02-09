@@ -31,6 +31,7 @@ const { SoundCloudPlugin } = require('@distube/soundcloud');
 
 // Global Variables
 client.distube = new DisTube(client, {
+  youtubeDL: false,
   leaveOnStop: false,
   emitNewSongOnly: true,
   emitAddSongWhenCreatingQueue: false,
