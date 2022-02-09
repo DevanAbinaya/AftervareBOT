@@ -46,7 +46,7 @@ module.exports = {
                 .setPlaceholder("Pilih opsi yang kamu inginkan!")
                 .addOptions([
                     {
-                        label: "/Slash Commands",
+                        label: "/Slash Commands!",
                         description: "Click here to see the Slash Commands section",
                         value: "first"
                     },
@@ -56,7 +56,7 @@ module.exports = {
                         value: "second"
                     },
                     {
-                        label: "[-] Only Commands",
+                        label: "Without Prefix Commands!",
                         description: "Click here to see the commands",
                         value: "third"
                     },
@@ -131,7 +131,7 @@ module.exports = {
             .setColor("GREEN")
             .addFields(
                 {name: "Discord Activity",value: "`/activities` = Lakukan berbagai aktivitas bersama di Discord!"},
-                {name: "Utilities",value: "`/ping` = Returns websocket ping\n`/clean (Not Available)` = Remove the amount of message you want to delete\n`/bonk` = No horni\n`/triggered (Not Available)` = Pake ini kalo ke-triggered."},
+                {name: "Utilities",value: "`/ping` = Returns websocket ping\n`/clean (Not Available)` = Remove the amount of message you want to delete\n`/bonk` = No horni\n`/triggered` = Pake ini kalo ke-triggered."},
                 {name: 'Music Commands *(Moved To Prefix Command)*',value: "`/play` = Play a song!\n`/skip` = Skip the current song\n`/pause` = Pause the current song\n`/resume` = Resume the current song\n`/queue` = Display the queue\n`/volume` = Change or check the volume of the current song\n`/lyrics` = Display lyrics for the current song or a specific song\n`/now-playing` = Shows information about the current song."}
             )
             .setTimestamp()
@@ -152,8 +152,8 @@ module.exports = {
 
 
         let embed3 = new MessageEmbed()
-            .setTitle("*(Not Available)*")
-            .setDescription("You need to use [-] in order to execute this command!")
+            .setTitle("Without Prefix Commands")
+            .setDescription("No need prefix to use this commands")
             .setColor("GREEN")
             .addFields(
                 {name: 'Commands', value: '`speed` = Hamster be like: "wooosh"\n`troleo divino` = ima put ma balls in yo jaw\n`troleo` = half of me be like\n`divino` = and yes another half of me be like\n`amogus` = S U S\n`dog` = yoo ma dog whatcha doin over there?\n`cat` = smiling cat ( yes thats it ).'}
