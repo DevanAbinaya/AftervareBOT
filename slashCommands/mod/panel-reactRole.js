@@ -31,6 +31,7 @@ module.exports = {
         const panelEmbed = new MessageEmbed()
             .setTitle('Select Your Roles!')
             .setDescription(`Choose an option from the menu below!`)
+            .setImage('https://cdn.discordapp.com/attachments/938403930159841311/941252447031156736/PICK_ROLES.gif')
             .setColor('BLUE')
 
         const components = [
