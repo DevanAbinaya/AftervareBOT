@@ -6,8 +6,6 @@ module.exports = {
     description: 'show Bot Latency',
     userperm: [],
     botperm: [],
-    maintenance: true,
-
    
     /** 
      * @param {Client} client 
