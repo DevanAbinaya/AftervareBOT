@@ -6,6 +6,7 @@ module.exports = {
     ownerOnly: false,
     cooldown: 3,
     description: 'Attempt to unscramble the given scrambled word',
+    maintenance: true,
     /**
      * 
      * @param {Client} client 

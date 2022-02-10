@@ -1,5 +1,6 @@
 const client = require("..");
-const { MessageEmbed } = require('discord.js')
+const { MessageEmbed } = require('discord.js');
+const colors = require('../assets/colors.json');
 
 client.on("interactionCreate", async (interaction) => {
     // Slash Command Handling
@@ -22,6 +23,7 @@ client.on("interactionCreate", async (interaction) => {
         }
         const userperm = interaction.member.permissions.has(cmd.userperm || []);
 
+        // Permissions Handler
         if (!userperm) {
             let userperm = new MessageEmbed().setDescription(
                 `*❌ You Need **${cmd.userperm}**  Permissions!*`
@@ -35,14 +37,30 @@ client.on("interactionCreate", async (interaction) => {
               );
          return interaction.followUp({embeds : [perms]}); }
 
-     const { owners } = require("../config/config.json");
-     if (cmd) {
-      if (cmd.ownerOnly) {
-     if (!owners.includes(interaction.user.id)) {
-     let ownerOnly = new MessageEmbed()
-      .setDescription( "*❌ Only Bot Developer can use this command!*" )
-    return interaction.followUp({embeds : [ownerOnly] })
-    }}
+        // Owners only handler
+         const { owners } = require("../config/config.json");
+         if (cmd) {
+            if (cmd.ownerOnly) {
+                if (!owners.includes(interaction.user.id)) {
+                    let ownerOnly = new MessageEmbed()
+                        .setDescription( "*❌ Only Bot Developer can use this command!*" )
+                    return interaction.followUp({embeds : [ownerOnly] })
+            }}
+        }
+
+    // Maintenance handler
+    if (cmd.maintenance) {
+        if (!owners.includes(interaction.author.id)) {
+            const down = {
+              title: '<:error:939189126786318336> Oops my bad',
+              description: "I'm really sorry that currently this command is in maintenance.\n> Please wait in patience until we fix this!",
+              color: colors.red,
+              timestamp: new Date(),
+            };
+            return interaction.reply({
+                embeds: [down],
+            });
+        }
     }
        
 

@@ -3,6 +3,7 @@ var config = require("../config/config.json");
 var ee = require("../config/config.json");
 const client = require("..");
 const ms = require('ms');
+const color = require('../assets/colors.json')
 
 function sleep(milliseconds) {
     const date = Date.now();
@@ -106,6 +107,21 @@ client.on("messageCreate", async (message) => {
       .setDescription( "*<a:No_1:939189505804607509> Only Bot Developer can use this command!*" )
     return message.channel.send({ embeds: [ownerOnly]})
     }}
+  }
+
+    // Maintenance handler
+    if (command.maintenance) {
+      if (!owners.includes(message.author.id)) {
+          const down = {
+            title: '<:error:939189126786318336> Oops my bad',
+            description: "I'm really sorry that currently this command is in maintenance.\n> Please wait in patience until we fix this!",
+            color: colors.red,
+            timestamp: new Date(),
+          };
+          return message.reply({
+              embeds: [down],
+          });
+      }
   }
 
  if (command) command.run(client, message, args, prefix);
