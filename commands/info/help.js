@@ -142,9 +142,9 @@ module.exports = {
             .setDescription("This commands need Prefix!")
             .setColor("GREEN")
             .addFields(
-                {name: "Future Moderation *(Not Available)*", value: "`-prefix` = Check the server prefix\n`-setprefix` = Set your custom prefix\n`-prefix-reset` = Reset the prefix to default"},
-                {name: "General", value: "`-help` = For Help!\n`-ping` = Returns websocket ping\n`-invite` = Get the bot invitation\n`-hen` = Unlock a secret channel (sst don't tell anyone about this command). *this command only works in [this server](https://discord.gg/v5fjSdKwr2)"},
-                {name: "Games", value: '`-gunfight` = Tag temanmu untuk bermain gunfight\n`-akinator` = Penebak handal'}
+                {name: "Future Moderation", value: `\`-prefix\` = Check the server prefix\n\`${p}setprefix\` = Set your custom prefix\n\`${p}prefix-reset\` = Reset the prefix to default`},
+                {name: "General", value: `\`${p}help\` = For Help!\n\`${p}ping\` = Returns websocket ping\n\`${p}invite\` = Get the bot invitation\n\`${p}hen\` = Unlock a secret channel (sst don't tell anyone about this command). *this command only works in [this server](https://discord.gg/v5fjSdKwr2)`},
+                {name: "Games", value: `\`${p}gunfight\` = Tag temanmu untuk bermain gunfight\n\`${p}akinator\` = Penebak handal`}
             )
             .setTimestamp()
             .setFooter({ text: "If you can't find what you need, ask `Factiven#9110` for help." });
