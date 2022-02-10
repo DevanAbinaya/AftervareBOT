@@ -69,7 +69,7 @@ module.exports = {
               .setTitle("📬 Need help? Here are all of my Normal commands:")
               .addFields(categories)
               .setDescription(
-                `Use \`${p}help\` followed by a command name to get more additional information on a command. For example: \`${p}help invite\`.`
+                `Use \`\`${p}help\`\` followed by a command name to get more additional information on a command. For example: \`${p}help invite\`.`
               )
               .setFooter({ text: "If you can't find what you need, ask `Factiven#9110` for help." })
               .setTimestamp()
