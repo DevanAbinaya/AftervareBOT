@@ -12,6 +12,7 @@ module.exports = {
     description: "Who's that Pokemon?!",
     cooldown: 5,
     usage: '',
+    maintenance: true,
     /** 
      * @param {Client} client 
      * @param {Message} message 
