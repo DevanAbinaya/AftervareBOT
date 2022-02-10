@@ -3,7 +3,7 @@ var config = require("../config/config.json");
 var ee = require("../config/config.json");
 const client = require("..");
 const ms = require('ms');
-const color = require('../assets/colors.json')
+const colors = require('../assets/colors.json')
 
 function sleep(milliseconds) {
     const date = Date.now();

@@ -19,15 +19,16 @@ module.exports = {
      * @param {String[]} args 
      */
     run: async(client, message, args) => { 
-        const game = new Pokemon({
-            message: message,
-            token: 'dagpi-token-here', // Get Your Api Token at https://dagpi.xyz/dashboard
-            winMessage: 'You Win!',
-            loseMessage: 'You Lose!',
-            wrongGuess: 'Wrong Guess!',
-            stopCommand = 'stop',
-            maxAttempts: 10,
-          })
-          game.start()
+
+     //   const game = new Pokemon({
+     //       message: message,
+     //       token: 'dagpi-token-here', // Get Your Api Token at https://dagpi.xyz/dashboard
+     //       winMessage: 'You Win!',
+     //       loseMessage: 'You Lose!',
+     //       wrongGuess: 'Wrong Guess!',
+     //       stopCommand = 'stop',
+     //       maxAttempts: 10,
+     //     })
+     //     game.start()
    }
  }  

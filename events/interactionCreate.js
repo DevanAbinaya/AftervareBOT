@@ -50,14 +50,14 @@ client.on("interactionCreate", async (interaction) => {
 
     // Maintenance handler
     if (cmd.maintenance) {
-        if (!owners.includes(interaction.author.id)) {
+        if (!owners.includes(interaction.user.id)) {
             const down = {
               title: '<:error:939189126786318336> Oops my bad',
               description: "I'm really sorry that currently this command is in maintenance.\n> Please wait in patience until we fix this!",
               color: colors.red,
               timestamp: new Date(),
             };
-            return interaction.reply({
+            return interaction.followUp({
                 embeds: [down],
             });
         }
