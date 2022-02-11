@@ -2,7 +2,7 @@ const client = require("../index");
 const mongoose = require("mongoose");
 const chalk = require("chalk");
 require('dotenv').config();
-var mongoUrl = process.env.MONGO_URL;
+var mongoUrl = process.env.MONGOLAB_URI;
 
 client.on("ready", () => {
 /// Channel log
