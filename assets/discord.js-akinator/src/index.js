@@ -219,6 +219,7 @@ module.exports = async function (input, options = {}) {
                                 title: translations.wellPlayed,
                                 description: `**${inputData.author.username}, ${translations.guessedRightOneMoreTime}**`,
                                 color: options.embedColor,
+                                image: { url: aki.answers[0].absolute_picture_path },
                                 author: { name: usertag, iconURL: avatar },
                                 fields: [
                                     { name: translations.character, value: `**${await translate(aki.answers[0].name, options.language)}**`, inline: true },
