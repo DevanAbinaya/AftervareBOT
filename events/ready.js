@@ -1,7 +1,8 @@
 const client = require("../index");
 const mongoose = require("mongoose");
 const chalk = require("chalk");
-const { mongoUrl } = require("../config/config.json"); 
+require('dotenv').config();
+var mongoUrl = process.env.MONGO_URL;
 
 client.on("ready", () => {
 /// Channel log
