@@ -1,5 +1,5 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
-const { Pokemon } = require('djs-games');
+const { Pokemon } = require('../../assets/modules/djs-games');
 
 
 module.exports = {
@@ -12,7 +12,6 @@ module.exports = {
     description: "Who's that Pokemon?!",
     cooldown: 5,
     usage: '',
-    maintenance: true,
     /** 
      * @param {Client} client 
      * @param {Message} message 
@@ -23,10 +22,6 @@ module.exports = {
         const game = new Pokemon({
             message: message,
             token: 'MTY0NDY1MjYwNw.dUzqnFnMP3FTkBkmWOTZXdlMiwmQO57V.08298f69fcd5fbad', // Get Your Api Token at https://dagpi.xyz/dashboard
-            winMessage: 'You Win!',
-            loseMessage: 'You Lose!',
-            wrongGuess: 'Wrong Guess!',
-            stopCommand = 'stop',
             maxAttempts: 10,
           })
           game.start()
