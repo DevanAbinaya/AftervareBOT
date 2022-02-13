@@ -6,7 +6,7 @@ module.exports = {
     ownerOnly: false,
     cooldown: 3,
     description: 'Attempt to unscramble the given scrambled word',
-    maintenance: true,
+    maintenance: false,
     /**
      * 
      * @param {Client} client 
@@ -15,7 +15,7 @@ module.exports = {
      */
 
     run: async(client, message, args) => {
-        let words = ['modern', 'low', 'high', 'mountain', 'cow', 'help', 'somebody', 'works', 'something'];
+       let words = ['modern', 'low', 'high', 'mountain', 'cow', 'help', 'somebody', 'works', 'something', "abandon", "ability ", "able", "abortion", 'above', 'abroad', 'absence', 'absolute', 'absorb', 'academic', 'accept', 'access', 'accident', 'accompany', 'accomplish', 'according', 'account', 'achievement', 'action', 'advance', 'advertising', 'advice', 'age', 'back', 'barrier', 'basic', 'basket', 'bathroom', 'battery', 'battle', 'beach', 'bean', 'beat', 'birth', 'blue', 'board', 'bomb', 'bond', 'book', 'boat', 'bone', 'bite', 'brother', 'brand', 'brick', 'bridge', 'broken', 'British', 'busy', 'cabin', 'capacity', 'capital', 'carbon', 'car', 'carry', 'cat', 'cash', 'captain', 'card', 'category', 'celebrate', 'center', 'century', 'chairman', 'chapter', 'charity', 'chart', 'cheap', 'check', 'cheek', 'cheese', 'chemical', 'choose', 'citizen', 'civil', 'clear', 'client', 'closer', 'club', 'coal', 'cold', 'complex', 'concept', 'consume', 'cotton', 'craft', 'death', 'deep', 'dimension', 'drugs', 'drop', 'dinner', 'earth', 'draw', 'easy', 'economic', 'egg', 'employee', 'empty', 'end', 'enemy', 'engineering', 'enjoy', 'event', 'everyday', 'example', 'extend', 'factory', 'failure', 'false', 'family', 'fantasy', 'fast', 'father', 'feed', 'fight', 'final', 'find', 'finger', 'first', 'flame', 'foundation', 'freeze', 'fresh', 'friend', 'fuel', 'galaxy', 'gather', 'gaze', 'general', 'gentleman', 'ghost', 'gift', 'global', 'grade', 'grass', 'great', 'green', 'gun', 'habitat', 'half', 'handle', 'happen', 'happy', 'hard', 'hate', 'hearing', 'heat', 'heavily', 'heel', 'height', 'helicopter', 'hello', 'holy', 'highway', 'history', 'honey', 'hotel'];
         let word = words[parseInt(Math.random() * words.length)];
 
         let scrambled = word.split('');
@@ -24,18 +24,29 @@ module.exports = {
 
         while(scrambled.join('') == word) scrambled.sort(() => (Math.random() > .5) ? 1 : -1);
 
-        message.channel.send(`Your word is... \`${scrambled.join('')}\`! Unscramble the given word.`);
-        
-        const filter = msg => msg.author.id == message.author.id;
-        
-        const collector = message.channel.createMessageCollector({ filter, time: 60000, max: 1 })
+        message.channel.send(`Your word is... \`${scrambled.join('')}\`! Unscramble the given word in **30** seconds. You have **5** try!`);
 
-        collector.on('collect', async(msg) => {
-            if(msg.content.toLowerCase() == word.toLowerCase()) return message.channel.send(`That's correct! Good job!`);
-        });
+         let counter = 0;
+         const filter = msg => !msg.author.bot;
+         const collector = message.channel.createMessageCollector({ filter, time: 30000})
 
-        collector.on('end', async(collected) => {
-            if(collected.size == 0) message.channel.send(`You timed out! Respond quicker next time.`);
-        });
+         collector.on('collect', async(msg) => {
+             counter++;
+             if(counter === 5) {
+                 collector.stop();
+             }
+             if (msg.content.toLowerCase() == word.toLowerCase()) {
+                msg.reply(`That's correct! Good job!`);
+                collector.stop();
+             }
+             else {
+                const msd = await message.channel.send("`That's incorrect. Try again!`")
+                client.sleep(2000).then(() => msd.delete());
+            }
+         });
+         collector.on('end', async(collected) => {
+             if(counter === 5 ) message.channel.send(`You have run out of moves!`)
+             if(collected.size == 0) message.channel.send(`You timed out! The answer is \`${word}\`. Respond quicker next time.`);
+         });
     }
 };
