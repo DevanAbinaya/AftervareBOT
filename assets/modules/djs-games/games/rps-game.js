@@ -24,17 +24,17 @@ class RockPaperScissors {
     let winner;      
     
     let button1 = new MessageButton()
-    .setLabel("🪨")
+    .setLabel("ROCK")
     .setCustomId("rock")
     .setStyle("PRIMARY")
 
     let button2 = new MessageButton()
-    .setLabel("🧻")
+    .setLabel("PAPER")
     .setCustomId("paper")
     .setStyle("PRIMARY")
 
     let button3 = new MessageButton()
-    .setLabel("✂️")
+    .setLabel("SCISSORS")
     .setCustomId("scissors")
     .setStyle("PRIMARY")
 
