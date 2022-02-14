@@ -28,10 +28,9 @@ module.exports = {
 
          let counter = 0;
          const filter = msg => !msg.author.bot;
-         const collector = message.channel.createMessageCollector({ filter, time: 30000})
+         const collector = message.channel.createMessageCollector({ filter, time: 50000})
 
          collector.on('collect', async(msg) => {
-            client.sleep(30000).then((msg) => msg.channel.send(`You timed out! The answer is \`${word}\`. Respond quicker next time.`));
              counter++;
              if(counter === 5) {
                  collector.stop();
@@ -41,8 +40,7 @@ module.exports = {
                 collector.stop();
              }
              else {
-                const msd = await message.channel.send("`That's incorrect. Try again!`")
-                client.sleep(2000).then(() => msd.delete());
+                await message.channel.send("`That's incorrect. Try again!`")
             }
             
          });
@@ -51,8 +49,11 @@ module.exports = {
                 message.channel.send(`You have run out of moves, the right word is \`${word}\``);
              } 
              else if (collected.size == 0) {
-                message.channel.send(`You timed out! The answer is \`${word}\`. Respond quicker next time.`);
+                message.channel.send(`You have been timed out! The answer is \`${word}\`. Respond quicker next time.`);
+             } else {
+                message.channel.send(`You have been timed out! The answer is \`${word}\`. Respond quicker next time.`);
              }
          });
+         
     }
 };
