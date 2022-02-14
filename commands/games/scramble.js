@@ -24,7 +24,7 @@ module.exports = {
 
         while(scrambled.join('') == word) scrambled.sort(() => (Math.random() > .5) ? 1 : -1);
 
-        message.channel.send(`Your word is... \`${scrambled.join('')}\`! Unscramble the given word in **30** seconds. You have **5** try!`);
+        message.channel.send(`Your word is... \`${scrambled.join('')}\`! Unscramble the given word in **50** seconds. You have **5** try!`);
 
          let counter = 0;
          const filter = msg => !msg.author.bot;
