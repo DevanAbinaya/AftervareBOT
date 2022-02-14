@@ -45,8 +45,12 @@ module.exports = {
             }
          });
          collector.on('end', async(collected) => {
-             if(counter === 5 ) message.channel.send(`You have run out of moves!`)
-             if(collected.size == 0) message.channel.send(`You timed out! The answer is \`${word}\`. Respond quicker next time.`);
+             if(counter === 5 ) {
+                message.channel.send(`You have run out of moves!`);
+             } 
+             if(collected.size == 0) {
+                message.channel.send(`You timed out! The answer is \`${word}\`. Respond quicker next time.`);
+             }
          });
     }
 };
