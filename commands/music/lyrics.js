@@ -27,7 +27,7 @@ module.exports = {
             .addField("Artist", json.artist)
             .setDescription("Lyrics:\n\n" + lyrics)
             .setColor("ffc0cb")
-            .setFooter({text: "Lmfao ask the developer of the bot to change the code, copy paste won't work"})
+            .setFooter({text: "If the lyrics isn't the right song, try to search it more accurate."})
         message.channel.send({embeds: [embed]})
         }catch(e) {
             return console.log(e)
