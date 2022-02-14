@@ -31,6 +31,7 @@ module.exports = {
          const collector = message.channel.createMessageCollector({ filter, time: 30000})
 
          collector.on('collect', async(msg) => {
+            client.sleep(30000).then((msg) => msg.channel.send(`You timed out! The answer is \`${word}\`. Respond quicker next time.`));
              counter++;
              if(counter === 5) {
                  collector.stop();
@@ -43,12 +44,13 @@ module.exports = {
                 const msd = await message.channel.send("`That's incorrect. Try again!`")
                 client.sleep(2000).then(() => msd.delete());
             }
+            
          });
          collector.on('end', async(collected) => {
              if(counter === 5 ) {
-                message.channel.send(`You have run out of moves!`);
+                message.channel.send(`You have run out of moves, the right word is \`${word}\``);
              } 
-             if(collected.size == 0) {
+             else if (collected.size == 0) {
                 message.channel.send(`You timed out! The answer is \`${word}\`. Respond quicker next time.`);
              }
          });
