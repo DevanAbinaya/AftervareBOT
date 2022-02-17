@@ -7,7 +7,7 @@ module.exports = {
     userperm: [],
     botperm: [],
     ownerOnly: false,
-    description: "Duel your friends is a simple gunfight game!",
+    description: "Duel your friends in a simple gunfight game!",
     cooldown: 5,
     usage: '<Mention.user>',
     /** 

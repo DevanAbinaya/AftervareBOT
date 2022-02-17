@@ -3,7 +3,7 @@ const { FastTyper } = require('../../assets/modules/djs-games')
 
 module.exports = {
     name: 'fasttyper',
-    aliases: ['ft', 'fasttype', 'fm'], 
+    aliases: ['ft', 'fasttype'], 
     categories: 'games', 
     userperm: [],
     botperm: [],
