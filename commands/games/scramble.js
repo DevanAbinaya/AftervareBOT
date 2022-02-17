@@ -50,9 +50,9 @@ module.exports = {
              } 
              else if (collected.size == 0) {
                 message.channel.send(`You have been timed out! The answer is \`${word}\`. Respond quicker next time.`);
-             } else {
-                message.channel.send(`You have been timed out! The answer is \`${word}\`. Respond quicker next time.`);
-             }
+             } else if (collected.size == 5) return
+
+
          });
          
     }
