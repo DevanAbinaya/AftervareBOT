@@ -33,7 +33,7 @@ class fastTyper {
                     let winnerEmbed = new discord.MessageEmbed()
                         .setColor("GREEN")
                         .setTitle(`Fast Typer`)
-                        .setDescription(`\`\`\`The word is [${word}]\`\`\`\n**GG! The winner is ${collected.first().author}**`)
+                        .setDescription(`\`\`\`ㅤㅤㅤㅤㅤㅤㅤㅤㅤThe word is [ ${word} ]ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ\`\`\`\n**GG! The winner is ${collected.first().author}**`)
                         .setTimestamp()
                     emsg.edit({ embeds: [winnerEmbed] })
                 }).catch(err => {
