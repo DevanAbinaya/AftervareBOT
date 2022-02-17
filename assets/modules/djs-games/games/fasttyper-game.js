@@ -31,10 +31,9 @@ class fastTyper {
                     collected.first().react('🎉')
 
                     let winnerEmbed = new discord.MessageEmbed()
-                        .setColor("YELLOW")
+                        .setColor("GREEN")
                         .setTitle(`Fast Typer`)
-                        .setDescription(`Game begins in 5 seconds...\nGame begins in 4 seconds...\nGame begins in 3 seconds...\nGame begins in 2 seconds...\nGame begins in 1 second...
-\nThe word is ${word}\n\n**GG!**\n**The winner is ${collected.first().author}**`)
+                        .setDescription(`\`\`\`The word is [${word}]\`\`\`\n**GG! The winner is ${collected.first().author}**`)
                         .setTimestamp()
                     emsg.edit({ embeds: [winnerEmbed] })
                 }).catch(err => {
@@ -52,7 +51,7 @@ class fastTyper {
                 let second1 = new discord.MessageEmbed()
                     .setColor("#b80404")
                     .setTitle(`Fast Typer`)
-                    .setDescription(` **Games begins in 5 seconds...**\nGame begins in 4 seconds...\nGame begins in 3 seconds...\nGame begins in 2 seconds...\nGame begins in 1 second...`)
+                    .setDescription(` **Games begins in 5 seconds...**`)
                     .setTimestamp()
 
                 emsg.edit({ embeds: [second1] })
@@ -62,7 +61,7 @@ class fastTyper {
                     let second2 = new discord.MessageEmbed()
                         .setColor("#ff0000")
                         .setTitle(`Fast Typer`)
-                        .setDescription(`Game begins in 5 seconds...\n**Game begins in 4 seconds...**\nGame begins in 3 seconds...\nGame begins in 2 seconds...\nGame begins in 1 second...`)
+                        .setDescription(`**Games begins in 4 seconds...**`)
                         .setTimestamp()
 
                     emsg.edit({ embeds: [second2] })
@@ -72,7 +71,7 @@ class fastTyper {
                         let second3 = new discord.MessageEmbed()
                             .setColor("#c45f00")
                             .setTitle(`Fast Typer`)
-                            .setDescription(`Game begins in 5 seconds...\nGame begins in 4 seconds...\n**Game begins in 3 seconds...**\nGame begins in 2 seconds...\nGame begins in 1 second...`)
+                            .setDescription(`**Games begins in 3 seconds...**`)
                             .setTimestamp()
 
                         emsg.edit({ embeds: [second3] })
@@ -82,7 +81,7 @@ class fastTyper {
                             let second4 = new discord.MessageEmbed()
                                 .setColor("#e06e02")
                                 .setTitle(`Fast Typer`)
-                                .setDescription(`Game begins in 5 seconds...\nGame begins in 4 seconds...\nGame begins in 3 seconds...\n**Game begins in 2 seconds...**\nGame begins in 1 second...`)
+                                .setDescription(`**Games begins in 2 seconds...**`)
                                 .setTimestamp()
 
                             emsg.edit({ embeds: [second4] })
@@ -92,7 +91,7 @@ class fastTyper {
                                 let second5 = new discord.MessageEmbed()
                                     .setColor("#ff7c00")
                                     .setTitle(`Fast Typer`)
-                                    .setDescription(`Game begins in 5 seconds...\nGame begins in 4 seconds...\nGame begins in 3 seconds...\nGame begins in 2 seconds...\n**Game begins in 1 second...**\nThe word is...`)
+                                    .setDescription(`**Games begins in 1 seconds...**`)
                                     .setTimestamp()
 
                                 emsg.edit({ embeds: [second5] })
@@ -102,7 +101,7 @@ class fastTyper {
                                     let second6 = new discord.MessageEmbed()
                                         .setColor("#00ff00")
                                         .setTitle(`Fast Typer`)
-                                        .setDescription(`Game begins in 5 seconds...\nGame begins in 4 seconds...\nGame begins in 3 seconds...\nGame begins in 2 seconds...\nGame begins in 1 second...\n**The word is... ${word}**`)
+                                        .setDescription(`Games begins in 0 seconds...\n**The word is... ${word}**`)
                                         .setTimestamp()
 
                                     emsg.edit({ embeds: [second6] })
