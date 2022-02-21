@@ -1,5 +1,5 @@
 {
-  "name": "neon",
+  "name": "aftervare-bot",
   "version": "3.0.0",
   "description": "Discord v13 handler",
   "main": "index.js",
