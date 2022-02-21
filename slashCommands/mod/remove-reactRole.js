@@ -4,9 +4,9 @@ const rrModel = require('../../models/reactionroles')
 module.exports = {
     name: 'roles-remove',
     description: 'remove a custom reaction role',
-    userperm: ['MANAGE_ROLES'],
-    botperm: ['MANAGE_ROLES'],
-    ownerOnly: true,
+    userperm: ['ADMINISTRATION'],
+    botperm: ['ADMINISTRATION'],
+    ownerOnly: false,
     options: [
         {
             name: 'role',
