@@ -286,7 +286,7 @@ colb.on("collect", async (i) =>{
    }) 
     }               
    pre.setImage(img);
-   pre.setImage(img);     
+   result.setImage(img);     
    i1.first().delete();
    preview.edit({
         content: "**Preview:**",
