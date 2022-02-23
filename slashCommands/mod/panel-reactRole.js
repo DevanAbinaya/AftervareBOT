@@ -4,8 +4,8 @@ const rrModel = require('../../models/reactionroles')
 module.exports = {
     name: 'roles-panel',
     description: 'reaction role panel',
-    userperm: ['ADMINISTRATION'],
-    botperm: ['ADMINISTRATION'],
+    userperm: ['ADMINISTRATOR'],
+    botperm: ['ADMINISTRATOR'],
     ownerOnly: false,
   
     /** 
