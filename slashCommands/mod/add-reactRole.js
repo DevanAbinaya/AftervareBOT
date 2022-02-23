@@ -4,8 +4,8 @@ const rrModel = require('../../models/reactionroles')
 module.exports = {
     name: 'roles-add',
     description: 'add a custom reaction role',
-    userperm: ['ADMINISTRATION'],
-    botperm: ['ADMINISTRATION'],
+    userperm: ['ADMINISTRATOR'],
+    botperm: ['ADMINISTRATOR'],
     ownerOnly: false,
     options: [
         {
