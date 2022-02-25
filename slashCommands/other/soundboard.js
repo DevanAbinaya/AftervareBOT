@@ -99,7 +99,7 @@ module.exports = {
               value: 'arigato'
             },
             {
-              name: 'Turuturu',
+              name: 'Tutturuu',
               value: 'turuturu'
             },
             {

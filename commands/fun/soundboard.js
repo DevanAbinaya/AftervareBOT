@@ -22,7 +22,7 @@ module.exports = {
             .addFields(
                 {
                   name: 'ANIME',
-                  value: "`ara-ara` `arigato` `fuck-you` `niconiconii` `oni-chan` `senpai` `turuturu`"
+                  value: "`ara-ara` `arigato` `fuck-you` `niconiconii` `oni-chan` `senpai` `tutturu`"
                 },
                 {
                   name: 'EFFECTS',
