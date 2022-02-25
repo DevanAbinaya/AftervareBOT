@@ -22,6 +22,7 @@ module.exports = {
      * @param {String[]} args 
      */
     run: async(client, interaction, args) => {
+        await interaction.deferReply();
         const role = interaction.options.getRole("role");
         
         const guildData = await rrModel.findOne({ guildId: interaction.guildId })

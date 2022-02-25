@@ -34,6 +34,7 @@ module.exports = {
      * @param {String[]} args 
      */
     run: async(client, interaction, args) => {
+        await interaction.deferReply();
         const role = interaction.options.getRole("role");
         const roleDescription = interaction.options.getString("description") || null;
         const roleEmoji = interaction.options.getString("emoji") || null;

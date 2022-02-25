@@ -14,6 +14,7 @@ module.exports = {
      * @param {String[]} args 
      */
     run: async(client, interaction, args) => {
+        await interaction.deferReply();
         const guildData = await rrModel.findOne({ guildId: interaction.guildId });
         if(!guildData?.roles) return interaction.followUp("There is no roles in this server!");
 

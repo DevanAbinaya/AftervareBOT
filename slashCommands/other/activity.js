@@ -55,6 +55,7 @@ module.exports = {
      * @param {String[]} args 
      */
   run: async(client, interaction) => {
+    await interaction.deferReply();
 
     const ApplicationId = interaction.options.getString('mini-games');
 

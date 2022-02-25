@@ -32,6 +32,7 @@ module.exports = {
    * @param {String[]} args
    */
   run: async (client, interaction, args) => {
+    await interaction.deferReply();
     const roleColor =
     interaction.guild.me.displayHexColor === "#000000"
         ? "#ffffff"

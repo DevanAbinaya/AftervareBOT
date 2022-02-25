@@ -27,6 +27,7 @@ module.exports = {
      * @param {String[]} args 
      */
     run: async(client, interaction, args) => {
+        await interaction.deferReply();
 
         const weight = args[0];
         const height = args[1];

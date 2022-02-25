@@ -4,8 +4,8 @@ const colors = require("../../assets/colors.json");
 const ms = require('ms');
 
 module.exports = {
-  name: "anime",
-  aliases: ["search-anime"],
+  name: "find-anime",
+  aliases: ["search-anime", 'anime'],
   categories: 'fun',
   description: 'Search anime through discord!',
   usage: "<search>",

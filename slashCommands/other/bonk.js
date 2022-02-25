@@ -22,6 +22,7 @@ module.exports = {
      * @param {String[]} args 
      */
     run: async(client, interaction, args) => {
+        await interaction.deferReply();
         const member = interaction.guild.members.cache.get(args[0]) 
         if (member.id == interaction.member.id) return interaction.followUp('You cannot bonk yourself')
           const { body } = await superagent

@@ -14,6 +14,7 @@ module.exports = {
      */
     run: async(client, interaction, args) => {
       //  interaction.editReply({content : `Ping : ${client.ws.ping}`})
+      await interaction.deferReply();
       let circles = {
         green: "<a:Online_Ping:866085733534269440>",
         yellow: "<a:yellowloading:865563744162283541>",

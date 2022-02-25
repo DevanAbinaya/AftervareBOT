@@ -29,6 +29,7 @@ module.exports = {
      * @param {String[]} args 
      */
     run: async(client, interaction, args) => {
+        await interaction.deferReply();
         const language = interaction.options.getString('language')
         const query = interaction.options.getString('message')
         

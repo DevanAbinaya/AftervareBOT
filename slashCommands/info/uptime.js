@@ -16,6 +16,7 @@ module.exports = {
      * @param {String[]} args 
      */
     run: async(client, interaction, args) => {
+      await interaction.deferReply();
 
     const uptime = moment
       .duration(client.uptime)

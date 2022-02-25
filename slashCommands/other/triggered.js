@@ -11,6 +11,7 @@ module.exports = {
      * @param {String[]} args
      */
     run: async (client, interaction, args) => {
+        await interaction.deferReply();
         const canvas = Canvas.createCanvas(800, 1000);
         const context = canvas.getContext('2d');
         const background = await Canvas.loadImage('./triggered.jpg')

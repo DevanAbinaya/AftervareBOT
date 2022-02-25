@@ -5,7 +5,7 @@ const colors = require('../assets/colors.json');
 client.on("interactionCreate", async (interaction) => {
     // Slash Command Handling
     if (interaction.isCommand()) {
-        await interaction.deferReply({ ephemeral: false }).catch(() => {});
+        // await interaction.deferReply({ ephemeral: false }).catch(() => {});
 
         const cmd = client.slashCommands.get(interaction.commandName);
         if (!cmd)
@@ -62,7 +62,13 @@ client.on("interactionCreate", async (interaction) => {
             });
         }
     }
-       
+
+    // VoiceChannel 
+    if (cmd.vc) {
+        if (!interaction.member.voice.channel) {
+            return interaction.reply({content: '**You must be in a voice channel to use this command**', ephemeral: true})
+        }
+    }  
 
         interaction.member = interaction.guild.members.cache.get(interaction.user.id);
 

@@ -32,6 +32,7 @@
     "discord.js-akinator": "^3.3.2",
     "distube": "^3.3.1-1",
     "djs-games": "^2.1.10",
+    "djs-soundboard": "^4.0.9",
     "dotenv": "^16.0.0",
     "ffmpeg-static": "^4.4.1",
     "glob": "^7.1.7",
