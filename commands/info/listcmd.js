@@ -51,8 +51,9 @@ module.exports = {
                 if (!file.name) return "No command name.";
       
                 let name = file.name.replace(".js", "");
-      
-                return `\`${name}\``;
+                let description = file.description;
+
+                return `\`${name}\` : ${description} \n`;
               });
       
               let data = new Object();
