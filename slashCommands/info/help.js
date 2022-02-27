@@ -25,6 +25,15 @@ module.exports = {
     ownerOnly: false,
     userperm: [],
     botperm: [],
+    maintenance: true,
+    options: [
+      {
+        name: 'command',
+        type: 'STRING',
+        description: 'Please enter the command name!',
+        required: false,
+      }
+    ],
 
   /**
    * @param {Client} client
@@ -38,7 +47,9 @@ module.exports = {
         ? "#ffffff"
         : interaction.guild.me.displayHexColor;
 
-    if (!args[0]) {
+    const content = interaction.options.getString('command');
+
+    if (!content) {
       let categories = [];
 
       const p = await client.prefix(interaction)
@@ -83,9 +94,9 @@ module.exports = {
     } else {
       const p = await client.prefix(interaction)
       const command =
-        client.commands.get(args[0].toLowerCase()) ||
+        client.commands.get(content.toLowerCase()) ||
         client.commands.find(
-          (c) => c.aliases && c.aliases.includes(args[0].toLowerCase())
+          (c) => c.aliases && c.aliases.includes(content.toLowerCase())
           );
 
       if (!command) {
