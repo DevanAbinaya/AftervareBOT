@@ -75,8 +75,8 @@ module.exports = {
               value: 'directed-by-robert-b_voI2Z4T'
             },
             {
-              name: 'Shutdown',
-              value: 'shutdown'
+              name: 'Are-ya-winning-son',
+              value: 'are-ya-winning-son'
             },
             {
               name: 'Senpai',

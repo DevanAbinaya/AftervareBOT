@@ -22,15 +22,15 @@ module.exports = {
             .addFields(
                 {
                   name: 'ANIME',
-                  value: "`ara-ara` `arigato` `fuck-you` `niconiconii` `oni-chan` `senpai` `tutturu`"
+                  value: "`ara-ara`\n`arigato`\n`fuck-you`\n`niconiconii`\n`oni-chan`\n`senpai`\n`tutturu`"
                 },
                 {
                   name: 'EFFECTS',
-                  value: '`bass-boost` `dicord-notification` `error` `fart` `roblox-death` `shutdown` `villager`'
+                  value: '`bass-boost`\n`dicord-notification`\n`error`\n`fart`\n`roblox-death`\n`are-ya-winning-son`\n`villager`'
                 },
                 {
                   name: 'MEMES',
-                  value: '`john-cena` `bruh` `directed-by` `enemy-spotted` `herewegoagain` `itwasthismoment` `noice` `rickroll` `super-idol` `virus` `x-file-theme-song`'
+                  value: '`john-cena`\n`bruh`\n`directed-by`\n`enemy-spotted`\n`herewegoagain`\n`itwasthismoment`\n`noice`\n`rickroll`\n`super-idol`\n`virus`\n`x-file-theme-song`'
                 }
             )
             .setFooter({ text: "If you can't find what you need, ask `Factiven#9110` for help." })
