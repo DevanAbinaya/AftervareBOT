@@ -38,6 +38,13 @@ client.distube = new DisTube(client, {
   emitNewSongOnly: true,
   emitAddSongWhenCreatingQueue: false,
   emitAddListWhenCreatingQueue: false,
+  ytdlOptions: {
+    highWaterMark: 1024 * 1024 * 64,
+    quality: "highestaudio",
+    format: "audioonly",
+    liveBuffer: 60000,
+    dlChunkSize: 1024 * 1024 * 4,
+  },
   plugins: [
     new SpotifyPlugin({
       emitEventsAfterFetching: true
@@ -54,6 +61,7 @@ client.slashCommands = new Collection();
 client.categories = fs.readdirSync("./commands/");
 client.colors = require("./assets/colors.json");
 client.emotes = config.emoji;
+client.temp = new Collection();
 
 // Initializing the project
 //Loading files, with the client variable like Command Handler, Event Handler, ...

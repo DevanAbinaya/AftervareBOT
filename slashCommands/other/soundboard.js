@@ -3,14 +3,14 @@ const SoundBoard = require('../../assets/modules/djs-soundboard');
 
 module.exports = {
     name: 'soundboard',
-    description: 'Some of Soundboard sound',
+    description: 'Play a bunch of sound!',
     userperm: [],
     botperm: [],
     vc: true,
     options: [
         {
           name: 'sound',
-          description: 'choose the mini-game',
+          description: 'choose a sound!',
           type: 'STRING',
           required: true,
           choices: [

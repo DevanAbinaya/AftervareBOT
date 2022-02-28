@@ -9,7 +9,7 @@ client.distube
 .on('playSong', (queue, song) => {
   const yes = {
     author: {
-      name: 'NOW PLAYING',
+      name: 'PLAYING A SONG',
     },
     thumbnail: {
       url: `${song.thumbnail}`,
@@ -53,7 +53,7 @@ client.distube
     channel.send(`${client.emotes.error} | An error encountered: ${e.toString().slice(0, 1974)}`)
     console.error(e)
   })
-  .on('empty', channel => channel.send('Voice channel is empty! Leaving the channel...'))
+  .on('empty', channel => message.channel.send('Voice channel is empty! Leaving the channel...'))
   .on('searchNoResult', (message, query) =>
     message.channel.send(`${client.emotes.error} | No result found for \`${query}\`!`)
   )

@@ -17,6 +17,7 @@
     "@distube/soundcloud": "^1.1.0",
     "@distube/spotify": "^1.2.0",
     "@distube/yt-dlp": "^0.0.2",
+    "@distube/ytdl-core": "^4.10.0",
     "@iamtraction/google-translate": "^1.1.2",
     "ascii-table": "^0.0.9",
     "atob": "^2.1.2",
