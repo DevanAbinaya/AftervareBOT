@@ -22,6 +22,7 @@ module.exports = {
     const queue = client.distube.getQueue(message)
     if (!queue) return message.channel.send(`${client.emotes.error} | There is nothing in the queue right now!`)
     queue.stop()
-    message.channel.send(`${client.emotes.success} | Stopped!`)
+    const msd = await message.channel.send(`${client.emotes.success} | Stopped!`)
+    client.sleep(5000).then(() => msd.delete());
   }
 }

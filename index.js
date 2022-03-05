@@ -33,7 +33,7 @@ const { SoundCloudPlugin } = require('@distube/soundcloud');
 client.distube = new DisTube(client, {
   youtubeDL: false,
   leaveOnEmpty: true,
-  emptyCooldown: 3,
+  emptyCooldown: 5,
   leaveOnStop: false,
   emitNewSongOnly: true,
   emitAddSongWhenCreatingQueue: false,
