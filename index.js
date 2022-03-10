@@ -4,6 +4,12 @@ const { DisTube } = require('distube');
 require('dotenv').config();
 var token = process.env.token;
 const fs = require("fs");
+
+// // Youtube Notification
+const Parser = require("rss-parser");
+const parser = new Parser();
+const YoutubePoster = require("discord-yt-poster");
+
 const client = new Client({
   messageCacheLifetime: 60,
   fetchAllMembers: false,
@@ -62,11 +68,24 @@ client.categories = fs.readdirSync("./commands/");
 client.colors = require("./assets/colors.json");
 client.emotes = config.emoji;
 client.temp = new Collection();
+client.YTP = new YoutubePoster(client);
 
 // Initializing the project
 //Loading files, with the client variable like Command Handler, Event Handler, ...
 ["command"].forEach((handler) => {
   require(`./handler/${handler}`)(client);
 });
+
+
+/**
+ * Format a date to a readable string
+ * @param {Date} date The date to format 
+ */
+ function formatDate(date) {
+  let monthNames = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+  let day = date.getDate(), month = date.getMonth(), year = date.getFullYear();
+  return `${day} ${monthNames[parseInt(month, 10)]} ${year}`;
+}
+
 
 client.login(token); 
