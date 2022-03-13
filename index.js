@@ -8,7 +8,6 @@ const fs = require("fs");
 // // Youtube Notification
 const Parser = require("rss-parser");
 const parser = new Parser();
-const YoutubePoster = require("discord-yt-poster");
 
 const client = new Client({
   messageCacheLifetime: 60,
@@ -68,7 +67,6 @@ client.categories = fs.readdirSync("./commands/");
 client.colors = require("./assets/colors.json");
 client.emotes = config.emoji;
 client.temp = new Collection();
-client.YTP = new YoutubePoster(client);
 
 // Initializing the project
 //Loading files, with the client variable like Command Handler, Event Handler, ...

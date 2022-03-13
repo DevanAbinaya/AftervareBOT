@@ -4,6 +4,14 @@ const Canvas = require('canvas');
 module.exports = {
     name: 'triggered',
     description: 'Make you triggered',
+    options: [
+        {
+            name: 'user',
+            description: 'user to mention',
+            type: 'USER',
+            required: false
+        }
+    ],
     /**
      * 
      * @param {Client} client
@@ -12,18 +20,39 @@ module.exports = {
      */
     run: async (client, interaction, args) => {
         await interaction.deferReply();
-        const canvas = Canvas.createCanvas(800, 1000);
-        const context = canvas.getContext('2d');
-        const background = await Canvas.loadImage('./triggered.jpg')
+        const member = interaction.options.getMember('user');
 
-        context.drawImage(background, 0, 0, canvas.width, canvas.height);
-        const userAvatar = await Canvas.loadImage(interaction.user.displayAvatarURL({ format: 'jpg' }));
-        context.drawImage(userAvatar, 0, 0, 800, 800);
-        const sepia = await Canvas.loadImage('./sepia.png');
-        context.drawImage(sepia, 0, 0, 800, 800);
+        if (!member) {
 
-        const finalImage = new MessageAttachment(canvas.toBuffer(), 'finalImage.png');
+            const canvas = Canvas.createCanvas(800, 1000);
+            const context = canvas.getContext('2d');
+            const background = await Canvas.loadImage('./triggered.jpg')
 
-        interaction.followUp({ content: `**${interaction.user.username} is triggered!!!**`, files: [finalImage] });
+            context.drawImage(background, 0, 0, canvas.width, canvas.height);
+            const userAvatar = await Canvas.loadImage(interaction.user.displayAvatarURL({ format: 'jpg' }));
+            context.drawImage(userAvatar, 0, 0, 800, 800);
+            const sepia = await Canvas.loadImage('./sepia.png');
+            context.drawImage(sepia, 0, 0, 800, 800);
+
+            const finalImage = new MessageAttachment(canvas.toBuffer(), 'finalImage.png');
+
+            interaction.followUp({ content: `**${interaction.user.username} is triggered!!!**`, files: [finalImage] });
+
+        } else {
+
+            const canvas = Canvas.createCanvas(800, 1000);
+            const context = canvas.getContext('2d');
+            const background = await Canvas.loadImage('./triggered.jpg')
+
+            context.drawImage(background, 0, 0, canvas.width, canvas.height);
+            const userAvatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
+            context.drawImage(userAvatar, 0, 0, 800, 800);
+            const sepia = await Canvas.loadImage('./sepia.png');
+            context.drawImage(sepia, 0, 0, 800, 800);
+
+            const finalImage = new MessageAttachment(canvas.toBuffer(), 'finalImage.png');
+
+            interaction.followUp({ content: `**${member.user.username} is triggered!!!**`, files: [finalImage] });
+        }
     },
 };
