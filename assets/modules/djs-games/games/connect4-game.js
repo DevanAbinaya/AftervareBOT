@@ -41,7 +41,7 @@ class ConnectFour {
         const initial = new discord.MessageEmbed()
             .setTitle(`${this.player1} It's your turn, ${this.message.author.username}!`)
             .setDescription(initialState)
-            .setFooter(`${challenger.username} vs ${oppenent.username}`)
+            .setFooter({ text: `${challenger.username} vs ${oppenent.username}` })
         this.message.channel.send({ embeds: [initial] }).then(gameMessage => {
 
             gameMessage.react("1️⃣")
@@ -186,7 +186,7 @@ class ConnectFour {
                         const TieEmbed = new discord.MessageEmbed()
                             .setTitle(`The game ended, it is a Tie!`)
                             .setDescription(renderBoard(board))
-                            .setFooter(`${challenger.username} vs ${oppenent.username}`)
+                            .setFooter({text: `${challenger.username} vs ${oppenent.username}`})
                         gameCollector.stop("Tie Game")
                         return gameMessage.edit({ embeds: [TieEmbed] })
                     }
@@ -200,7 +200,7 @@ class ConnectFour {
                             const WinEmbed = new discord.MessageEmbed()
                                 .setTitle(`${gameData[player].member.username} has won the game!`)
                                 .setDescription(renderBoard(board))
-                                .setFooter(`${challenger.username} vs ${oppenent.username}`)
+                                .setFooter({text: `${challenger.username} vs ${oppenent.username}`})
                             gameCollector.stop(`${gameData[player].member.id} won`);
                             return gameMessage.edit({ embeds: [WinEmbed] })
                         }
@@ -211,7 +211,7 @@ class ConnectFour {
                     const newEmbed = new discord.MessageEmbed()
                         .setTitle(`${gameData[player].playerColor} -  It's your turn, ${gameData[player].member.username}!`)
                         .setDescription(renderBoard(board))
-                        .setFooter(`${challenger.username} vs ${oppenent.username}`)
+                        .setFooter({text: `${challenger.username} vs ${oppenent.username}`})
                     gameMessage.edit({ embeds: [newEmbed] });
                 }
             })
