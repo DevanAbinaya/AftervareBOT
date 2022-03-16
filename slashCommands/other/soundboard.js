@@ -40,6 +40,7 @@ module.exports = {
               {name: "Discord-Notification", value: "discord-notification"},
               {name: "Error", value: "error"},
               {name: "Fart", value: "fart"},
+              {name: "He he he ha", value: "heheheha"},
               {name: "MitsUBisHi MatErIAls", value: "materials"},
               {name: "Ok-Bye", value: "okbye"},
               {name: "Roblox-Death", value: "roblox-death"},
