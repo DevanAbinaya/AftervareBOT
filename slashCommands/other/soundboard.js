@@ -17,13 +17,13 @@ module.exports = {
           choices: [
               {name: "Ara-Ara", value: "ara-ara"},
               {name: "Arigatou", value: "arigato"},
-              {name: "F*ck-You", value: "fuck-you"},
+              {name: "F*ck You", value: "fuck-you"},
               {name: "Kamehameha", value: "kamehameha"},
               {name: "Katon", value: "katon"},
               {name: "Kawaiii", value: "kawaii"},
-              {name: "Kira-Laugh", value: "kiras_laugh"},
+              {name: "Kira Laugh", value: "kiras_laugh"},
               {name: "Nani?!?", value: "nani_Pmxf5n3"},
-              {name: "Nico-Nico-Nii", value: "niconiconii"},
+              {name: "Nico Nico Nii", value: "niconiconii"},
               {name: "Oni-Chan", value: "oni-chan"},
               {name: "Senpai", value: "senpai"},
               {name: "Tutturuu", value: "turuturu"},
@@ -36,16 +36,16 @@ module.exports = {
           type: 'SUB_COMMAND',
           options: [{ name: "sound", description: "Choose a sound", type: "STRING", required: true,
           choices: [
-              {name: "Bass-Boost", value: "bass-boost"},
-              {name: "Discord-Notification", value: "discord-notification"},
+              {name: "Bass Boost", value: "bass-boost"},
+              {name: "Discord Notification", value: "discord-notification"},
               {name: "Error", value: "error"},
               {name: "Fart", value: "fart"},
               {name: "He he he ha", value: "heheheha"},
               {name: "MitsUBisHi MatErIAls", value: "materials"},
-              {name: "Ok-Bye", value: "okbye"},
-              {name: "Roblox-Death", value: "roblox-death"},
+              {name: "Ok Bye", value: "okbye"},
+              {name: "Roblox Death", value: "roblox-death"},
               {name: "Shutdown", value: "shutdown"},
-              {name: "Technoblade-Bruh", value: "tecnobladebruh"},
+              {name: "Technoblade Bruh", value: "tecnobladebruh"},
               {name: "Villager", value: "villager"},
       
           ]}]
@@ -56,28 +56,28 @@ module.exports = {
           type: 'SUB_COMMAND',
           options: [{ name: "sound", description: "Choose a sound", type: "STRING", required: true,
           choices: [
-              {name: "And-his-name-is-john-cena", value: "and-his-name-is-john-cena-1"},
-              {name: "Are-ya-winning-son", value: "are-ya-winning-son"},
+              {name: "And his name is john cena", value: "and-his-name-is-john-cena-1"},
+              {name: "Are ya winning son", value: "are-ya-winning-son"},
               {name: "Bruh", value: "bruh"},
-              {name: "Coffin-Dance", value: "coffin-dance"},
-              {name: "Directed-By", value: "directed-by-robert-b_voI2Z4T"},
-              {name: "Enemy-Spotted", value: "enemy-spotted"},
-              {name: "F*cked-Up", value: "fucked-up"},
-              {name: "Helicopter-Helicopter", value: "helicopter-helicopter"},
-              {name: "Ah-shit-here-we-go-again", value: "herewegoagain"},
-              {name: "it-was-at-this-moment-that-he-he-knew-he-f-cked-up", value: "it-was-at-this-moment-that-he-he-knew-he-f-cked-up"},
+              {name: "Coffin Dance", value: "coffin-dance"},
+              {name: "Directed By", value: "directed-by-robert-b_voI2Z4T"},
+              {name: "Enemy Spotted", value: "enemy-spotted"},
+              {name: "F*cked Up", value: "fucked-up"},
+              {name: "Helicopter Helicopter", value: "helicopter-helicopter"},
+              {name: "Ah shit here we go again", value: "herewegoagain"},
+              {name: "it was at this moment that he knew he f-cked up", value: "it-was-at-this-moment-that-he-he-knew-he-f-cked-up"},
               {name: "Lesgo", value: "lesgo"},
               {name: "Noice", value: "noice"},
-              {name: "Ok-simp", value: "ok-simp"},
+              {name: "Ok simp", value: "ok-simp"},
               {name: "Rickroll", value: "rickroll"},
               {name: "SuckAdick", value: "suckAdick"},
-              {name: "super-idol", value: "super-idol"},
-              {name: "Surprise-Motherfucker", value: "surprise-motherfucker"},
+              {name: "super idol", value: "super-idol"},
+              {name: "Surprise Motherfucker", value: "surprise-motherfucker"},
               {name: "Oooooh", value: "the-rap-battle-parody-oh"},
-              {name: "Under-the-water", value: "underthewater"},
+              {name: "Under the water", value: "underthewater"},
               {name: "Virus", value: "virus"},
-              {name: "Why-are-you-running", value: "why-are"},
-              {name: "x-files-theme-song", value: "x-files-theme-song-copy"},
+              {name: "Why are you running", value: "why-are"},
+              {name: "x files theme song", value: "x-files-theme-song-copy"},
       
           ]}]
         }
@@ -154,6 +154,9 @@ module.exports = {
                     return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
                   case "fart" :
                     await sound.play(VoiceChannel, "fart")
+                    return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
+                  case "heheheha" :
+                    await sound.play(VoiceChannel, "heheheha")
                     return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
                   case "materials" :
                     await sound.play(VoiceChannel, "materials")
