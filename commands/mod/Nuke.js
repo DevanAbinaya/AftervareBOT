@@ -4,10 +4,10 @@ const { ReactionCollector } = require('discord-collector');
 module.exports = {
     name: 'nuke',
     aliases: [], 
-    categories: 'owner', 
+    categories: 'mod', 
     userperm: ['ADMINISTRATOR'],
     botperm: ['ADMINISTRATOR'],
-    ownerOnly: true,
+    ownerOnly: false,
     description: 'Delete channel and create a clone of the channel',
     cooldown: 5,
     usage: '',
