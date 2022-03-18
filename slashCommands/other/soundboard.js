@@ -60,6 +60,7 @@ module.exports = {
               {name: "Are ya winning son", value: "are-ya-winning-son"},
               {name: "Bruh", value: "bruh"},
               {name: "Coffin Dance", value: "coffin-dance"},
+              {name: "cum monster", value: "cum"},
               {name: "Directed By", value: "directed-by-robert-b_voI2Z4T"},
               {name: "Enemy Spotted", value: "enemy-spotted"},
               {name: "F*cked Up", value: "fucked-up"},
@@ -191,6 +192,9 @@ module.exports = {
                     return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
                   case "coffin-dance" :
                     await sound.play(VoiceChannel, "coffin-dance")
+                    return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
+                  case "cum" :
+                    await sound.play(VoiceChannel, "cum")
                     return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
                   case "directed-by-robert-b_voI2Z4T" :
                     await sound.play(VoiceChannel, "directed-by-robert-b_voI2Z4T")
