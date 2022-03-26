@@ -1,5 +1,5 @@
 let { MessageEmbed } = require("discord.js")
-let client = require("../index")
+let client = require("../../index")
 
  process.on("unhandledRejection", (reason, promise) => {
  

@@ -1,5 +1,5 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
-const { Pokemon } = require('../../assets/modules/djs-games');
+const { Pokemon } = require('../../src/assets/modules/djs-games');
 
 
 module.exports = {

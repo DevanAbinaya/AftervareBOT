@@ -1,5 +1,5 @@
 const { Client, CommandInteraction, MessageEmbed } = require('discord.js');
-const SoundBoard = require('../../assets/modules/djs-soundboard');
+const SoundBoard = require('../../src/assets/modules/djs-soundboard');
 const system_embed_colour = "RANDOM"
 
 module.exports = {

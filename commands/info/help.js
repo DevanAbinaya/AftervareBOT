@@ -5,8 +5,8 @@ const { readdirSync } = require("fs");
 let color = "#36393f";
 
 // Prefix
-const prefixSchema = require('../../models/prefix');
-const prefix = require('../../config/config.json').prefix;
+const prefixSchema = require('../../src/models/prefix');
+const prefix = require('../../src/config/config.json').prefix;
 client.prefix = async function(message) {
   let custom;
 

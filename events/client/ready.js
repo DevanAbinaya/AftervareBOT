@@ -1,4 +1,4 @@
-const client = require("../index");
+const client = require("../../index");
 const mongoose = require("mongoose");
 const chalk = require("chalk");
 require('dotenv').config();
@@ -51,8 +51,7 @@ const channel = client.channels.cache.get("927563716403269642")
 console.log(`${client.user.tag} is Online!`)
 channel.send(`**${client.user.tag} is Ready to Go!**`)
 const arrayOfStatus = [
-  `-help | -prefix`,
-  `Under Developement!`
+  `-help | -prefix`
 ];
 
 let index = 0;

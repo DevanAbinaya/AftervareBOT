@@ -37,13 +37,26 @@ module.exports = async (client) => {
     console.log(String(e.stack).bgRed);
   }
 
-  // Starts the events file
-  readdirSync("./events/").forEach((file) => {
-    const events = readdirSync("./events/").filter((file) =>
+  // Starts the CLIENT events file
+  readdirSync("./events/client/").forEach((file) => {
+    const events = readdirSync(`./events/client/`).filter((file) =>
       file.endsWith(".js")
     );
     for (let file of events) {
-      let pull = require(`../events/${file}`);
+      let pull = require(`../events/client/${file}`);
+      if (pull.name) {
+        client.events.set(pull.name, pull);
+      }
+    }
+    console.log((`✅ ${file} - Events Loads Success`).bgMagenta);
+  });
+  // Starts the OTHERS events file
+  readdirSync("./events/other/").forEach((file) => {
+    const events = readdirSync(`./events/other/`).filter((file) =>
+      file.endsWith(".js")
+    );
+    for (let file of events) {
+      let pull = require(`../events/other/${file}`);
       if (pull.name) {
         client.events.set(pull.name, pull);
       }

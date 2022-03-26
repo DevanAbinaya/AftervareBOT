@@ -1,6 +1,6 @@
 const { Message, Client, MessageEmbed } = require("discord.js");
 const fetch = require("node-fetch");
-const ee = require("../../config/embed.json");
+const ee = require("../../src/config/embed.json");
 
 module.exports = {
   name: "meme",

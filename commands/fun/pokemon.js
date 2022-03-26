@@ -1,11 +1,11 @@
 const { Message, Client, MessageEmbed } = require("discord.js");
 const { get } = require("request-promise-native");
-const config = require("../../config/config.json");
-const colors = require("../../assets/colors.json");
+const config = require("../../src/config/config.json");
+const colors = require("../../src/assets/colors.json");
 const client = require("../../index");
 // Prefix
-const prefixSchema = require('../../models/prefix');
-const prefix = require('../../config/config.json').prefix;
+const prefixSchema = require('../../src/models/prefix');
+const prefix = require('../../src/config/config.json').prefix;
 client.prefix = async function(message) {
   let custom;
 

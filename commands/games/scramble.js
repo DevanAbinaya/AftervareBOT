@@ -15,7 +15,7 @@ module.exports = {
      */
 
     run: async(client, message, args) => {
-        let words = require('../../assets/words.json');
+        let words = require('../../src/assets/words.json');
         let word = words[parseInt(Math.random() * words.length)];
 
         let scrambled = word.split('');

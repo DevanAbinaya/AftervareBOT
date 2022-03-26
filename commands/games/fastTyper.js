@@ -1,5 +1,5 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
-const { FastTyper } = require('../../assets/modules/djs-games')
+const { FastTyper } = require('../../src/assets/modules/djs-games')
 
 module.exports = {
     name: 'fasttyper',

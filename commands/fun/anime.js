@@ -1,6 +1,6 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
 const { get } = require("request-promise-native");
-const colors = require("../../assets/colors.json");
+const colors = require("../../src/assets/colors.json");
 const ms = require('ms');
 
 module.exports = {

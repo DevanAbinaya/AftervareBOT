@@ -1,5 +1,5 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
-const { RockPaperScissors } = require('../../assets/modules/djs-games')
+const { RockPaperScissors } = require('../../src/assets/modules/djs-games')
 
 module.exports = {
     name: 'rps',

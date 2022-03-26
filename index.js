@@ -4,6 +4,8 @@ const { DisTube } = require('distube');
 require('dotenv').config();
 var token = process.env.token;
 const fs = require("fs");
+var Id = process.env.CLIENT_ID;
+var secret = process.env.CLIENT_SECRET;
 
 // // Youtube Notification
 const Parser = require("rss-parser");
@@ -25,9 +27,9 @@ const client = new Client({
 });
 module.exports = client;
 
-const config = require("./config/config.json");
+const config = require("./src/config/config.json");
 
-const ee = require("./config/embed.json");
+const ee = require("./src/config/embed.json");
 const prefix = config.prefix;
 
 // Distube
@@ -52,7 +54,11 @@ client.distube = new DisTube(client, {
   },
   plugins: [
     new SpotifyPlugin({
-      emitEventsAfterFetching: true
+      emitEventsAfterFetching: true,
+      api: {
+        clientId: Id,
+        clientSecret: secret,
+      },
     }),
     new SoundCloudPlugin()
   ]
@@ -64,7 +70,7 @@ client.events = new Collection();
 client.cooldowns = new Collection();
 client.slashCommands = new Collection();
 client.categories = fs.readdirSync("./commands/");
-client.colors = require("./assets/colors.json");
+client.colors = require("./src/assets/colors.json");
 client.emotes = config.emoji;
 client.temp = new Collection();
 

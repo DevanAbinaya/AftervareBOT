@@ -1,6 +1,6 @@
 const { Client, Message, MessageEmbed } = require("discord.js");
-var ee = require('../../config/embed.json');
-var config = require('../../config/config.json');
+var ee = require('../../src/config/embed.json');
+var config = require('../../src/config/config.json');
 
 module.exports = {
   name: "avatar",

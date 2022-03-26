@@ -1,6 +1,6 @@
-const client = require("..");
+const client = require("../..");
 const { MessageEmbed } = require('discord.js');
-const colors = require('../assets/colors.json');
+const colors = require('../../src/assets/colors.json');
 
 client.on("interactionCreate", async (interaction) => {
     // Slash Command Handling
@@ -38,7 +38,7 @@ client.on("interactionCreate", async (interaction) => {
          return interaction.followUp({embeds : [perms]}); }
 
         // Owners only handler
-         const { owners } = require("../config/config.json");
+         const { owners } = require("../../src/config/config.json");
          if (cmd) {
             if (cmd.ownerOnly) {
                 if (!owners.includes(interaction.user.id)) {

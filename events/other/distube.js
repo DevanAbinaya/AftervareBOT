@@ -1,5 +1,5 @@
-const colors = require("../assets/colors.json");
-const client = require("../index");
+const colors = require("../../src/assets/colors.json");
+const client = require("../../index");
 const { MessageEmbed } = require('discord.js');
 
 const status = queue =>

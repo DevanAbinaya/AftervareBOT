@@ -1,5 +1,5 @@
 const { Client, CommandInteraction, MessageEmbed, MessageActionRow, MessageSelectMenu } = require('discord.js')
-const rrModel = require('../../models/reactionroles')
+const rrModel = require('../../src/models/reactionroles')
 
 module.exports = {
     name: 'roles-panel',

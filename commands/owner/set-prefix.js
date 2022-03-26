@@ -1,5 +1,5 @@
 const { Client, Message, MessageEmbed } = require('discord.js');
-const prefixSchema = require('../../models/prefix');
+const prefixSchema = require('../../src/models/prefix');
 
 module.exports = {
     name: 'setprefix',

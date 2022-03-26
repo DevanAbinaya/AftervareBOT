@@ -1,9 +1,9 @@
 const { MessageEmbed, Collection } = require("discord.js");
-var config = require("../config/config.json");
-var ee = require("../config/config.json");
-const client = require("..");
+var config = require("../../src/config/config.json");
+var ee = require("../../src/config/config.json");
+const client = require("../..");
 const ms = require('ms');
-const colors = require('../assets/colors.json')
+const colors = require('../../src/assets/colors.json')
 
 function sleep(milliseconds) {
     const date = Date.now();
@@ -18,8 +18,8 @@ function sleep(milliseconds) {
   }
 
 // Custom Prefix
-const prefixSchema = require('../models/prefix');
-const prefix = require('../config/config.json').prefix
+const prefixSchema = require('../../src/models/prefix');
+const prefix = require('../../src/config/config.json').prefix
 
 client.prefix = async function(message) {
   let custom;
@@ -38,7 +38,7 @@ client.prefix = async function(message) {
 client.on("messageCreate", async (message) => {
   const prefix = await client.prefix(message)
 
-  const { escapeRegex, onCoolDown } = require("../utils/function");
+  const { escapeRegex, onCoolDown } = require("../../utils/function");
   if (!message.guild) return;
   if (message.author.bot) return;
   if (message.channel.partial) await message.channel.fetch();
@@ -99,7 +99,7 @@ client.on("messageCreate", async (message) => {
     return message.channel.send({ embeds: [botperm] });
 
     /// owner only command handler
-    const { owners } = require("../config/config.json");
+    const { owners } = require("../../src/config/config.json");
     if (command) {
     if (command.ownerOnly) {
     if (!owners.includes(message.author.id)) {
