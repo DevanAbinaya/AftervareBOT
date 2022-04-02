@@ -50,7 +50,7 @@ client.on("ready", () => {
     .setFooter({text: `MEMASUKI WAKTU IMSAK`, iconURL: `${client.user.displayAvatarURL({dynamic: true, size: 512})}`})
     .setTimestamp();
 
-    cron.schedule('05 22 * * *', () => {
+    cron.schedule('10 22 * * *', () => {
         channel.send({embeds: [embed1]}).then((m) => {
           m.react("🤍")
 
