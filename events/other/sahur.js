@@ -6,33 +6,33 @@ const ms = require('ms');
  // Channel ID (Optional)
 
 client.on("ready", () => {
-    const channel = client.channels.cache.get('927563716403269642')
+    const channel = client.channels.cache.get('752744784174645281')
 
     const embed1 = new MessageEmbed()
     .setColor("WHITE")
     .setTitle("🕌    SAHURRRRRRRR!!     🕌")
-    .setDescription("**Good Morning Y'all !! | ||@everyone|| | SAHUR**\n Hari pertama puasa nih, Yok bangun yok!!\n> Waktu sahurnya masih ada sekitar `2 jam` lagi guys! Jangan sampe telat yaa! :hourglass: \n")
+    .setDescription("**Good Morning Y'all !! | ||@everyone|| | SAHUR**\n Hari pertama puasa nih, Yok bangun yok!!\n> Waktu sahurnya masih ada sekitar `2 jam` lagi, Jangan sampe telat yaa! :hourglass: \n")
     .setFooter({text: `Buruan makan, entar siang laper nangis lagi`, iconURL: `${client.user.displayAvatarURL({dynamic: true, size: 512})}`})
     .setTimestamp();
 
     const embed2 = new MessageEmbed()
     .setColor("WHITE")
     .setTitle("🕌    SAHURRRRRRRR!!     🕌")
-    .setDescription("**Good Morning Y'all !! | ||@everyone|| | SAHUR**\n Hari pertama puasa nih, Yok bangun yok!!\n> Waktu sahurnya masih ada sekitar `1,5 jam` lagi guys! Jangan sampe telat yaa! :hourglass: \n")
+    .setDescription("**Good Morning Y'all !! | ||@everyone|| | SAHUR**\n Hari pertama puasa nih, Yok bangun yok!!\n> Waktu sahurnya masih ada sekitar `1,5 jam` lagi, Jangan sampe telat yaa! :hourglass: \n")
     .setFooter({text: `Buruan makan, entar siang laper nangis lagi`, iconURL: `${client.user.displayAvatarURL({dynamic: true, size: 512})}`})
     .setTimestamp();
     
     const embed3 = new MessageEmbed()
     .setColor("WHITE")
     .setTitle("🕌    SAHURRRRRRRR!!     🕌")
-    .setDescription("**Good Morning Y'all !! | ||@everyone|| | SAHUR**\n Hari pertama puasa nih, Yok bangun yok!!\n> Waktu sahurnya masih ada sekitar `1 jam` lagi guys! Jangan sampe telat yaa! :hourglass: \n")
+    .setDescription("**Good Morning Y'all !! | ||@everyone|| | SAHUR**\n Hari pertama puasa nih, Yok bangun yok!!\n> Waktu sahurnya masih ada sekitar `1 jam` lagi, Jangan sampe telat yaa! :hourglass: \n")
     .setFooter({text: `Buruan makan, entar siang laper nangis lagi`, iconURL: `${client.user.displayAvatarURL({dynamic: true, size: 512})}`})
     .setTimestamp();
 
     const embed4 = new MessageEmbed()
     .setColor("WHITE")
     .setTitle("🕌    SAHURRRRRRRR!!     🕌")
-    .setDescription("**Good Morning Y'all !! | ||@everyone|| | SAHUR**\n Hari pertama puasa nih, Yok bangun yok!!\n> Waktu sahurnya masih ada sekitar `30 menit` lagi guys! Jangan sampe telat yaa! :hourglass: \n")
+    .setDescription("**Good Morning Y'all !! | ||@everyone|| | SAHUR**\n Hari pertama puasa nih, Yok bangun yok!!\n> Waktu sahurnya masih ada sekitar `30 menit` lagi, Jangan sampe telat yaa! :hourglass: \n")
     .setFooter({text: `Buruan makan, entar siang laper nangis lagi`, iconURL: `${client.user.displayAvatarURL({dynamic: true, size: 512})}`})
     .setTimestamp();
     
@@ -50,7 +50,7 @@ client.on("ready", () => {
     .setFooter({text: `MEMASUKI WAKTU IMSAK`, iconURL: `${client.user.displayAvatarURL({dynamic: true, size: 512})}`})
     .setTimestamp();
 
-    cron.schedule('05 22 * * *', () => {
+    cron.schedule('30 02 * * *', () => {
         channel.send({embeds: [embed1]}).then((m) => {
           m.react("🤍")
 
