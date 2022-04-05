@@ -11,42 +11,42 @@ client.on("ready", () => {
     const embed1 = new MessageEmbed()
     .setColor("WHITE")
     .setTitle("🕌    SAHURRRRRRRR!!     🕌")
-    .setDescription("**Good Morning Y'all !! | ||@everyone|| | SAHUR**\n Udah waktunya sahur nih, Yok bangun yok!!\n> Waktu sahurnya masih ada sekitar `2 jam` lagi, Jangan sampe telat yaa! :hourglass: \n")
+    .setDescription("**Good Morning Y'all !! | ||<@614645570044166174>|| | SAHUR**\n Udah waktunya sahur nih, Yok bangun yok!!\n> Waktu sahurnya masih ada sekitar `2 jam` lagi, Jangan sampe telat yaa! :hourglass: \n")
     .setFooter({text: `Buruan makan, entar siang laper nangis lagi`, iconURL: `${client.user.displayAvatarURL({dynamic: true, size: 512})}`})
     .setTimestamp();
 
     const embed2 = new MessageEmbed()
     .setColor("WHITE")
     .setTitle("🕌    SAHURRRRRRRR!!     🕌")
-    .setDescription("**Good Morning Y'all !! | ||@everyone|| | SAHUR**\n Udah waktunya sahur nih, Yok bangun yok!!\n> Waktu sahurnya masih ada sekitar `1,5 jam` lagi, Jangan sampe telat yaa! :hourglass: \n")
+    .setDescription("**Good Morning Y'all !! | ||<@614645570044166174>|| | SAHUR**\n Udah waktunya sahur nih, Yok bangun yok!!\n> Waktu sahurnya masih ada sekitar `1,5 jam` lagi, Jangan sampe telat yaa! :hourglass: \n")
     .setFooter({text: `Buruan makan, entar siang laper nangis lagi`, iconURL: `${client.user.displayAvatarURL({dynamic: true, size: 512})}`})
     .setTimestamp();
     
     const embed3 = new MessageEmbed()
     .setColor("WHITE")
     .setTitle("🕌    SAHURRRRRRRR!!     🕌")
-    .setDescription("**Good Morning Y'all !! | ||@everyone|| | SAHUR**\n Udah waktunya sahur nih, Yok bangun yok!!\n> Waktu sahurnya masih ada sekitar `1 jam` lagi, Jangan sampe telat yaa! :hourglass: \n")
+    .setDescription("**Good Morning Y'all !! | ||<@614645570044166174>|| | SAHUR**\n Udah waktunya sahur nih, Yok bangun yok!!\n> Waktu sahurnya masih ada sekitar `1 jam` lagi, Jangan sampe telat yaa! :hourglass: \n")
     .setFooter({text: `Buruan makan, entar siang laper nangis lagi`, iconURL: `${client.user.displayAvatarURL({dynamic: true, size: 512})}`})
     .setTimestamp();
 
     const embed4 = new MessageEmbed()
     .setColor("WHITE")
     .setTitle("🕌    SAHURRRRRRRR!!     🕌")
-    .setDescription("**Good Morning Y'all !! | ||@everyone|| | SAHUR**\n Udah waktunya sahur nih, Yok bangun yok!!\n> Waktu sahurnya masih ada sekitar `30 menit` lagi, Jangan sampe telat yaa! :hourglass: \n")
+    .setDescription("**Good Morning Y'all !! | ||<@614645570044166174>|| | SAHUR**\n Udah waktunya sahur nih, Yok bangun yok!!\n> Waktu sahurnya masih ada sekitar `30 menit` lagi, Jangan sampe telat yaa! :hourglass: \n")
     .setFooter({text: `Buruan makan, entar siang laper nangis lagi`, iconURL: `${client.user.displayAvatarURL({dynamic: true, size: 512})}`})
     .setTimestamp();
     
     const embed5 = new MessageEmbed()
     .setColor("WHITE")
     .setTitle("🕌    SAHURRRRRRRR!!     🕌")
-    .setDescription("**Dikit Lagi Imsak !! | ||@everyone|| | SAHUR**\n Dikit lagi imsak, yahhahah hayyuuu \n> Waktu menuju imsak tinggal `10 menit` lagi, Yang belom makan ayo makan! :hourglass: \n")
+    .setDescription("**Dikit Lagi Imsak !! | ||<@614645570044166174>|| | SAHUR**\n Dikit lagi imsak, yahhahah hayyuuu \n> Waktu menuju imsak tinggal `10 menit` lagi, Yang belom makan ayo makan! :hourglass: \n")
     .setFooter({text: `Lupa di update kemaren, untung diingetin Sandwichs :v`, iconURL: `${client.user.displayAvatarURL({dynamic: true, size: 512})}`})
     .setTimestamp();
 
     const embed6 = new MessageEmbed()
     .setColor("WHITE")
     .setTitle("🕌    SAHURRRRRRRR!!     🕌")
-    .setDescription("**Selamat Berpuasa !! | ||@everyone|| | IMSAK**\n Waktu sahur sudah habis! Selamat untuk kalian yang sudah sempat makan, yang belum harap bersabar :v  \n")
+    .setDescription("**Selamat Berpuasa !! | ||<@614645570044166174>|| | IMSAK**\n Waktu sahur sudah habis! Selamat untuk kalian yang sudah sempat makan, yang belum harap bersabar :v  \n")
     .setFooter({text: `MEMASUKI WAKTU IMSAK`, iconURL: `${client.user.displayAvatarURL({dynamic: true, size: 512})}`})
     .setTimestamp();
 
@@ -56,19 +56,19 @@ client.on("ready", () => {
 
           function countdown() {
             setTimeout(() => {
-              channel.send('@everyone').then((e) => {
+              channel.send('<@614645570044166174>').then((e) => {
                 e.delete()
               })
             }, ms('1 seconds'));
 
             setTimeout(() => {
-              channel.send('@everyone').then((e) => {
+              channel.send('<@614645570044166174>').then((e) => {
                 e.delete()
               })
             }, ms('2 seconds'));
 
             setTimeout(() => {
-              channel.send('@everyone').then((e) => {
+              channel.send('<@614645570044166174>').then((e) => {
                 e.delete()
               })
             }, ms('3 seconds'));
@@ -90,7 +90,7 @@ client.on("ready", () => {
             }, ms('110 minutes'));
 
             setTimeout(() => {
-              channel.send('@everyone').then((e) => {
+              channel.send('<@614645570044166174>').then((e) => {
                 e.delete()
               })
             }, ms('110 minutes'));
@@ -106,7 +106,7 @@ client.on("ready", () => {
             }, ms('2 hrs'));
 
             setTimeout(() => {
-              channel.send('@everyone').then((e) => {
+              channel.send('<@614645570044166174>').then((e) => {
                 e.delete()
               })
             }, ms('2 hours'));
