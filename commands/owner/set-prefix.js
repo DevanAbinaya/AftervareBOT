@@ -7,7 +7,7 @@ module.exports = {
     categories: 'owner', 
     userperm: ['MANAGE_GUILD'],
     botperm: ['MANAGE_GUILD'],
-    ownerOnly: true,
+    ownerOnly: false,
     description: 'Set bot prefix in server!',
     cooldown: 5,
     usage: '<new-prefix>',
