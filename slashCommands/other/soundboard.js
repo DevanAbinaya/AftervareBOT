@@ -68,6 +68,7 @@ module.exports = {
               {name: "Ah shit here we go again", value: "herewegoagain"},
               {name: "it was at this moment that he knew he f-cked up", value: "it-was-at-this-moment-that-he-he-knew-he-f-cked-up"},
               {name: "Lesgo", value: "lesgo"},
+              {name: "Pirates moment", value: "hoho"},
               {name: "Noice", value: "noice"},
               {name: "Ok simp", value: "ok-simp"},
               {name: "Rickroll", value: "rickroll"},
@@ -216,6 +217,9 @@ module.exports = {
                     return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
                   case "lesgo" :
                     await sound.play(VoiceChannel, "lesgo")
+                    return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
+                  case "Pirates moment" :
+                    await sound.play(VoiceChannel, "hoho")
                     return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
                   case "noice" :
                     await sound.play(VoiceChannel, "noice")
