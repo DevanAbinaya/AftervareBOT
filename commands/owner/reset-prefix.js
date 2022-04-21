@@ -8,7 +8,7 @@ module.exports = {
     categories: 'owner', 
     userperm: ['MANAGE_GUILD'],
     botperm: ['MANAGE_GUILD'],
-    ownerOnly: true,
+    ownerOnly: false,
     description: 'Reset prefix in server!',
     cooldown: 5,
     usage: '',
