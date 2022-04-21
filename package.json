@@ -41,7 +41,7 @@
     "https": "^1.0.0",
     "libsodium-wrappers": "^0.7.9",
     "minimist": "^1.2.6",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "moment-duration-format": "^2.3.2",
     "mongoose": "^6.2.0",
     "ms": "^2.1.3",
