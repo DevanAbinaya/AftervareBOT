@@ -20,7 +20,9 @@ module.exports = {
      */
     run: async (client, interaction, args) => {
         await interaction.deferReply();
-        const member = interaction.options.getMember('user');
+        
+        let options = interaction.options;
+        const member = options.getMember('user');
 
         if (!member) {
 

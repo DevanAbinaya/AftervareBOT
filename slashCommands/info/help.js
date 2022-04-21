@@ -25,7 +25,7 @@ module.exports = {
     ownerOnly: false,
     userperm: [],
     botperm: [],
-    maintenance: true,
+    maintenance: false,
     options: [
       {
         name: 'command',
