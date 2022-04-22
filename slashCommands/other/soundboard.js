@@ -218,7 +218,7 @@ module.exports = {
                   case "lesgo" :
                     await sound.play(VoiceChannel, "lesgo")
                     return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
-                  case "Pirates moment" :
+                  case "hoho" :
                     await sound.play(VoiceChannel, "hoho")
                     return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
                   case "noice" :
