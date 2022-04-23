@@ -36,6 +36,7 @@ module.exports = {
           type: 'SUB_COMMAND',
           options: [{ name: "sound", description: "Choose a sound", type: "STRING", required: true,
           choices: [
+              {name: "AMONG US", value: "amongus"},
               {name: "Bass Boost", value: "bass-boost"},
               {name: "Discord Notification", value: "discord-notification"},
               {name: "Error", value: "error"},
@@ -145,6 +146,9 @@ module.exports = {
               }
               case "effects" : {
                 switch(options.getString("sound")) {
+                  case "amongus" :
+                    await sound.play(VoiceChannel, "amongus")
+                    return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
                   case "bass-boost" :
                     await sound.play(VoiceChannel, "bass-boost")
                     return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
