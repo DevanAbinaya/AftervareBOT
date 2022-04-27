@@ -46,6 +46,7 @@ module.exports = {
               {name: "Ok Bye", value: "okbye"},
               {name: "Roblox Death", value: "roblox-death"},
               {name: "Shutdown", value: "shutdown"},
+              {name: "WIWU WIWU", value: "wiwu"},
               {name: "Technoblade Bruh", value: "tecnobladebruh"},
               {name: "Villager", value: "villager"},
       
@@ -175,6 +176,9 @@ module.exports = {
                     return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
                   case "shutdown" :
                     await sound.play(VoiceChannel, "shutdown")
+                    return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
+                  case "wiwu" :
+                    await sound.play(VoiceChannel, "wiwu")
                     return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
                   case "tecnobladebruh" :
                     await sound.play(VoiceChannel, "tecnobladebruh")
