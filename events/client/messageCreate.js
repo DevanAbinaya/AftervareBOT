@@ -161,9 +161,7 @@ client.on("messageCreate", async (message) => {
         });
 
       } else if(message.content.toLowerCase() == "troleo divino") {
-          message.channel.send('https://i.pinimg.com/736x/c5/3d/47/c53d47cec202c0750d19f80ad671ea7e.jpg').then((msg) => {
-            setTimeout(() => msg.delete(), ms('10 seconds'))
-        });
+          message.channel.send('https://i.pinimg.com/736x/c5/3d/47/c53d47cec202c0750d19f80ad671ea7e.jpg');
 
       } else if(message.content.toLowerCase().includes("amogus")) {
           message.channel.send('https://imgur.com/rkzfboM').then((msg) => {
@@ -171,14 +169,10 @@ client.on("messageCreate", async (message) => {
         });
 
       } else if(message.content.toLowerCase() == "troleo") {
-        message.channel.send('https://cdn.discordapp.com/attachments/697798117772492861/929381393786626058/troleo.jpg').then((msg) => {
-          setTimeout(() => msg.delete(), ms('10 seconds'))
-      });
+        message.channel.send('https://cdn.discordapp.com/attachments/697798117772492861/929381393786626058/troleo.jpg');
 
       } else if(message.content.toLowerCase() == "divino") {
-        message.channel.send('https://cdn.discordapp.com/attachments/697798117772492861/929381354318233620/divino.jpg').then((msg) => {
-          setTimeout(() => msg.delete(), ms('10 seconds'))
-      });
+        message.channel.send('https://cdn.discordapp.com/attachments/697798117772492861/929381354318233620/divino.jpg');
 
       } else if(message.content.toLowerCase() == "dog") {
         message.channel.send('https://imgur.com/tesrTEk').then((msg) => {
