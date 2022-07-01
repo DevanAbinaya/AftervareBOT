@@ -61,4 +61,6 @@ setInterval(() => {
   client.user.setActivity(status, { type: "PLAYING" })
   index++;
 }, 7000)
+
+client.manager.init(client.user.id);
 });

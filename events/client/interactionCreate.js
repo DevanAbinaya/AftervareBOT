@@ -93,4 +93,22 @@ client.on("interactionCreate", async (interaction) => {
             interaction.followUp(`${role.name} has been added to you`)
         }
     }
+    
+    // Buton Handler
+
+    if(interaction.isButton()) {
+        const button = client.buttons.get(interaction.customId);
+        if (!button) return await interaction.reply({ content: `There's no code for that button yet.`});
+
+        try {
+            await button.execute(interaction, client);
+        } catch (error) {
+            console.error(error);
+            await interaction.reply({
+                content: 'There was an error while executing this button!',
+                ephemeral: true
+            });
+        }
+    }
+
 }); 

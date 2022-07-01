@@ -104,7 +104,7 @@ module.exports = {
             .setTitle("Help Menu!")
             .setDescription(`**Pilih menu di bawah sesuai dengan kategorinya!**\n> Untuk melihat kategori, pakai command \`\`${p}help [category]\`\` atau \`\`/help\`\` untuk melihat slash command!`)
             .setColor("GREEN")
-            .setThumbnail('https://cdn.discordapp.com/attachments/925993294331269130/933566850904772618/unknown.png')
+            .setThumbnail('https://cdn.discordapp.com/attachments/938406741526323210/992382386476163102/anime-girl-laying-with-cat-4k-wallpaper-uhdpaper.com-2880g.jpg')
             .addFields(
                 {name: "Prefixes!",value: `\`\`Prefix = [${p}]\`\`` , inline: true,},
                 {name: "Invite Me!",value: `[Click Me](https://discord.com/api/oauth2/authorize?client_id=927193694937952276&permissions=8&scope=applications.commands%20bot)`, inline: true,},

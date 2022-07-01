@@ -11,7 +11,19 @@
         "success": "☑️",
         "repeat": "🔁",
         "error": "❌"
-      }
+      },
 
+    "ClientID": "991578084622991441",
+
+    "nodes": [
+        {
+            "id": "main",
+            "host": "lavalink.oops.wtf",
+            "port": 2000,
+            "password": "www.freelavalink.ga",
+            "retryAmount": 15, 
+            "retryDelay": 6000
+        }
+    ]
 
 }
