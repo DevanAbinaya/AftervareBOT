@@ -67,6 +67,7 @@ module.exports = {
               {name: "Enemy Spotted", value: "enemy-spotted"},
               {name: "F*cked Up", value: "fucked-up"},
               {name: "Helicopter Helicopter", value: "helicopter-helicopter"},
+              {name: "Hello There!", value: "hello-there"},
               {name: "Ah shit here we go again", value: "herewegoagain"},
               {name: "it was at this moment that he knew he f-cked up", value: "it-was-at-this-moment-that-he-he-knew-he-f-cked-up"},
               {name: "Lesgo", value: "lesgo"},
@@ -216,6 +217,9 @@ module.exports = {
                     return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
                   case "helicopter-helicopter" :
                     await sound.play(VoiceChannel, "helicopter-helicopter")
+                    return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
+                  case "hello-there" :
+                    await sound.play(VoiceChannel, "hello-there")
                     return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
                   case "herewegoagain" :
                     await sound.play(VoiceChannel, "herewegoagain")
