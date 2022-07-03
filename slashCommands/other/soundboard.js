@@ -42,6 +42,7 @@ module.exports = {
               {name: "Error", value: "error"},
               {name: "Fart", value: "fart"},
               {name: "He he he ha", value: "heheheha"},
+              {name: "HEEEEEEE", value: "heeee"},
               {name: "MitsUBisHi MatErIAls", value: "materials"},
               {name: "Ok Bye", value: "okbye"},
               {name: "Roblox Death", value: "roblox-death"},
@@ -165,6 +166,9 @@ module.exports = {
                     return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
                   case "heheheha" :
                     await sound.play(VoiceChannel, "heheheha")
+                    return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
+                  case "heeee" :
+                    await sound.play(VoiceChannel, "heeee")
                     return interaction.reply({embeds: [new MessageEmbed().setColor(system_embed_colour).setDescription("Playing a sound..")], ephemeral: true});
                   case "materials" :
                     await sound.play(VoiceChannel, "materials")
